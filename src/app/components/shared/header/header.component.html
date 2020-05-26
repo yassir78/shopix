@@ -1,0 +1,101 @@
+<div class="header">
+  <mat-toolbar class="header__mat-t pt-2">
+    <mat-toolbar-row>
+      <div class="container ">
+        <div class="row">
+          <div class="col-3 mt-4">
+            <span><button class="header__button__1">
+                <mat-icon class="header__icon">stars</mat-icon><span class="text">Vendre sur Shopix</span>
+              </button></span>
+          </div>
+          <div class="col-6"> <span><img src="../../../../assets/images/shopix.png" alt="no-images"
+                class="small-img"></span></div>
+          <div class="col-2 mt-4"> <a class="text-white ft" mat-button [matMenuTriggerFor]="langue">Langue <mat-icon>
+                arrow_drop_down</mat-icon>
+            </a>
+            <mat-menu #langue="matMenu" fxLayoutAlign="end center">
+              <button mat-menu-item>français</button>
+              <button mat-menu-item>arabe</button>
+            </mat-menu>
+          </div>
+          <div class="col-1 mt-4"><a href="" class="ft">Mon compte <mat-icon class="header__icon">account_circle
+              </mat-icon> </a></div>
+        </div>
+      </div>
+    </mat-toolbar-row>
+
+  </mat-toolbar>
+</div>
+
+
+
+<div class="nav bg-pri">
+  <mat-sidenav [opened]="false" mode="over" #start class="sidenav">
+    <div class="triangle"></div>
+    <div class="sidebar-items" fxLayout="column" (mouseleave)="start.close()">
+      <hr>
+      <a mat-list-item class="d-block">Informatique</a>
+      <hr>
+      <a mat-list-item class="d-block">Electrome</a>
+      <hr>
+      <a mat-list-item class="d-block">Informatique</a>
+      <hr>
+      <a mat-list-item class="d-block">Electrome</a>
+    </div>
+
+  </mat-sidenav>
+  <div class="container pt-3 ">
+    <div class="row">
+      <div class="col-1 my-auto ml-negative mr-5">
+        <span>
+          <button class="nav__toggle" mat-icon-button (mouseover)="start.open()">
+            <mat-icon class="nav__toggle__icon">menu</mat-icon>
+          </button></span>
+      </div>
+      <div class="col-2 nav__logo my-auto mr-5">
+        <a href=""><img src="../../../../assets/images/shopix.png" alt="no image" class="pt-3" width="200px"
+            height="150px" style="margin: 0;"></a>
+      </div>
+      <div class="col-6 my-auto nav__search pt-3">
+        <div class="search-form">
+          <form class="form-1 d-flex">
+            <input type="text" class="form-1-input">
+            <button type="submit" class="form-button ml-0">
+              <mat-icon>search</mat-icon>
+            </button>
+          </form>
+        </div>
+
+      </div>
+      <div class="col-3 my-auto pt-3 ml-5 d-flex">
+        <div class="contact d-flex">
+          <div class="icon ">
+            <mat-icon class="text-white mr-2" style="font-size: 50px;">call</mat-icon>
+          </div>
+          <div class="text">
+            <p style="font-size: 20px;">N° 0524042233</p>
+          </div>
+        </div>
+        <div class="panier pl-4">
+          <mat-icon class="text-white ml-3" style="font-size: 50px;">shopping_cart</mat-icon>
+          <span class="notif_panier text-white">3</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="menu">
+  <mat-toolbar-row>
+    
+      <div class="container">
+        <div class="row menu_items">
+          <div class="col-3"> <a  class="menu_link" href="">Accueil</a></div>
+          <div class="col-3"><a class="menu_link" href="">Boutique</a></div>
+          <div class="col-4"> <a class="menu_link" href="">Qui Sommes Nous?</a></div>
+          <div class="col-2"> <a class="menu_link" href="">Contactez-Nous</a></div>
+        </div>
+      </div>
+ 
+  </mat-toolbar-row>
+</div>
