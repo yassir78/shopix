@@ -1,18 +1,39 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AccueilComponent } from './components/boutique/accueil/accueil.component';
+import {MainComponent} from "./components/main/main.component";
 
 const routes: Routes = [
+
   {
-    path:'',
-    redirectTo:'accueil',
-    pathMatch:'full'
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'accueil',
   },
+
   {
     path:'accueil',
-    component:AccueilComponent
-  }
-];
+    component: MainComponent,
+    children:[{
+      path:'',
+      loadChildren:()=>import('./components/boutique/boutique.module').then(t=>t.BoutiqueModule)
+    },
+      {
+        path: 'boutique',
+        loadChildren: () => import('./components/boutique/boutique.module').then(t => t.BoutiqueModule)
+      },
+      {
+        path: 'contact',
+        loadChildren: () => import('./components/boutique/boutique.module').then(t => t.BoutiqueModule)
+      },
+      {
+        path: 'a-propos',
+        loadChildren: () => import('./components/boutique/boutique.module').then(t => t.BoutiqueModule)
+      }
+
+
+    ]
+  }];
 
 
 @NgModule({

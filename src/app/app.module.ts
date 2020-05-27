@@ -15,17 +15,21 @@ import { AccueilComponent } from './components/boutique/accueil/accueil.componen
 import { TestComponent } from './components/shared/test/test.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import {BoutiqueModule} from "./components/boutique/boutique.module";
+import { ShopComponent } from './components/shop/shop.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { AProposComponent } from './components/a-propos/a-propos.component';
+import {HttpClientModule} from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     MainComponent,
-    AccueilComponent,
-    TestComponent,
     HeaderComponent,
     FooterComponent
-   
+
   ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
@@ -34,7 +38,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     MaterialModule,
     FormsModule,
     NgxSpinnerModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

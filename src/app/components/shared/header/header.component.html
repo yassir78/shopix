@@ -30,17 +30,14 @@
 
 
 <div class="nav bg-pri">
-  <mat-sidenav [opened]="false" mode="over" #start class="sidenav">
+  <mat-sidenav  [opened]="false" mode="over" #start class="sidenav">
+    <div *ngIf="domaines">
     <div class="triangle"></div>
-    <div class="sidebar-items" fxLayout="column" (mouseleave)="start.close()">
+    <div class="sidebar-items" fxLayout="column" (mouseleave)="start.close()" *ngFor="let domaine of domaines._embedded.domaines">
       <hr>
-      <a mat-list-item class="d-block">Informatique</a>
+      <a mat-list-item class="d-block">{{domaine.nom}}</a>
       <hr>
-      <a mat-list-item class="d-block">Electrome</a>
-      <hr>
-      <a mat-list-item class="d-block">Informatique</a>
-      <hr>
-      <a mat-list-item class="d-block">Electrome</a>
+    </div>
     </div>
 
   </mat-sidenav>
@@ -87,15 +84,15 @@
 </div>
 <div class="menu">
   <mat-toolbar-row>
-    
+
       <div class="container">
         <div class="row menu_items">
-          <div class="col-3"> <a  class="menu_link" href="">Accueil</a></div>
-          <div class="col-3"><a class="menu_link" href="">Boutique</a></div>
-          <div class="col-4"> <a class="menu_link" href="">Qui Sommes Nous?</a></div>
-          <div class="col-2"> <a class="menu_link" href="">Contactez-Nous</a></div>
+          <div class="col-3"> <a  class="menu_link" routerLink="/accueil">Accueil</a></div>
+          <div class="col-3"><a class="menu_link" routerLink="/accueil/boutique" >Boutique</a></div>
+          <div class="col-4"> <a class="menu_link" routerLink="/accueil/a-propos">Qui Sommes Nous?</a></div>
+          <div class="col-2"> <a class="menu_link" routerLink="/contact">Contactez-Nous</a></div>
         </div>
       </div>
- 
+
   </mat-toolbar-row>
 </div>
