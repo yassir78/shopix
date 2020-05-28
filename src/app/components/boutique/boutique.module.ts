@@ -5,16 +5,29 @@ import {BoutiqueRoutingModule} from "./boutique-routing.module";
 import {ShopComponent} from "../shop/shop.component";
 import {ContactComponent} from "../contact/contact.component";
 import {AProposComponent} from "../a-propos/a-propos.component";
+import { MainCarouselComponent } from './main-carousel/main-carousel.component';
+import { ProduitCarouselComponent } from './produit-carousel/produit-carousel.component';
+import {SwiperModule} from "ngx-swiper-wrapper";
+import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import {MatIconModule} from "@angular/material/icon";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [AccueilComponent,
     ShopComponent,
     ContactComponent,
-    AProposComponent
+    AProposComponent,
+    MainCarouselComponent,
+    ProduitCarouselComponent,
+
   ],
   imports: [
     CommonModule,
-    BoutiqueRoutingModule
+    BoutiqueRoutingModule,
+    SwiperModule,
+    MatIconModule,
+    MatCardModule
   ]
 })
 export class BoutiqueModule {

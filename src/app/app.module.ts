@@ -11,14 +11,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 // Import library module
 import { NgxSpinnerModule } from "ngx-spinner";
 import { AppRoutingModule } from './app-routing.module';
-import { AccueilComponent } from './components/boutique/accueil/accueil.component';
-import { TestComponent } from './components/shared/test/test.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
-import {BoutiqueModule} from "./components/boutique/boutique.module";
-import { ShopComponent } from './components/shop/shop.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { AProposComponent } from './components/a-propos/a-propos.component';
 import {HttpClientModule} from "@angular/common/http";
 
 
@@ -39,7 +33,8 @@ import {HttpClientModule} from "@angular/common/http";
     FormsModule,
     NgxSpinnerModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

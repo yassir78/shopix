@@ -17,7 +17,7 @@
 a:link,a:visited{
     color: white;
     text-decoration: none;
-    
+
 }
  */
 
@@ -53,11 +53,11 @@ a:visited {
     &:hover{
         transform: translateY(-4px);
         color:$color-tertiary;
-       
+
     }
     &__icon {
       font-size: 80px;
-     
+
     }
   }
 }
@@ -130,17 +130,17 @@ a:visited {
     left: 0;
     clip-path: polygon(50% 0%, 36% 31%, 63% 31%);
 
-   
+
 }
 .sidebar-items{
     text-align: center;
-  
+
 }
 .menu{
     border-top: 2px solid white;
- 
+
         background-color: $color-tertiary;
-   
+
 }
 .btn-style{
     background-color: transparent;
@@ -174,3 +174,178 @@ a:visited {
   min-height: 7vh !important;
   height: 7vh;
 }
+.main-slider{
+height: 550px;
+
+  .sl-wrap{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    .content{
+      z-index: 100;
+      vertical-align: middle;
+      position: relative;
+      height: 100%;
+
+    }
+  }
+  .slide-item{
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+}
+.app-accueil{
+  background-color: #e8e4e1;
+  margin-bottom: 0;
+}
+.h-100{
+  height: 100%;
+}
+
+.products {
+    position: relative;
+    .swiper-button-prev.swiper-button-disabled[_ngcontent-c25] {
+      pointer-events: auto;
+  }
+    .product-wraper{
+      padding: 20px 0px 20px 20px;
+      .product-box {
+        width: 100%;
+
+
+      }
+    }
+  //   .swiper-slide {
+  //  width: 245.2px !important;
+  //  margin-right: 16px;
+  //   }
+    .product-item {
+      position: unset;
+      height: auto;
+      transition: .4s;
+      padding: 26px 5px 5px 5px;
+      .mat-card:not([class*=mat-elevation-z]) {
+
+        box-shadow: 2px 2px 6px 0px rgba(0,0,0,.1), 0 1px 1px 0 rgba(0,0,0,.0), 0 1px 3px 0 rgba(0,0,0,.12) !important;
+        padding: 0;
+        .product-img {
+          background: $color-primary;
+          img {
+            max-width: 180px;
+            margin-bottom: 12px;
+            display: block;
+              margin-left: auto;
+              margin-right: auto;
+          }
+        }
+        .product-info-wrapper {
+          padding: 15px;
+          .icons {
+            position: absolute;
+            top: 30px;
+            right: 10px;
+            opacity: 0;
+            transition: all 0.5s ease;
+            a {
+              color: $color-secondary;
+              cursor: pointer;
+              transition: 0.5s ease;
+              margin-bottom: 5px;
+              &:hover {
+                color: $color-secondary;
+              }
+            }
+          }
+
+
+          .stars {
+            color: $color-secondary;
+            margin: 2px 0 10px 0;
+            span {
+              color: $color-tertiary;
+              font-size: 13px;
+              margin-left: 10px;
+            }
+            mat-icon{
+              font-size: 17px;
+                line-height: 17px;
+                height: 17px;
+                width: 17px;
+                vertical-align: middle;
+            }
+          }
+          .category{
+            margin-bottom: 4px;
+        display: block;
+        font-weight: 300;
+           }
+           span {
+            color: $color-tertiary;
+            font-size: 14px;
+
+          }
+          .price-wrap {
+            p{
+              font-size: 19px;
+             }
+             mat-icon{
+              color: $color-white;
+             }
+             a {
+              background: $color-fourth;
+              cursor: pointer;
+              transition: .3s;
+              width: 38px;
+          height: 38px;
+          background: $color-primary;
+          border-radius: 50%;
+          text-align: center;
+          line-height: 46px;
+          &:hover {
+            background: $color-primary;
+          }
+              mat-icon {
+                transition: .3s;
+                font-size: 18px;
+              }
+
+            }
+          }
+          .title-wrap {
+            h4 {
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              font-weight: 500;
+            }
+          }
+        }
+        &:hover {
+          .icons {
+           opacity: 1;
+          }
+          .price-wrap {
+            a {
+             background: $color-fourth;
+            }
+          }
+         }
+    }
+    button.swipe-arrow {
+      position: absolute;
+      top: 50%;
+      margin-top: -22px;
+      z-index: 10;
+      background-image: none;
+  }
+    }
+  }
+
+
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: $color-primary !important;
+}
+
+

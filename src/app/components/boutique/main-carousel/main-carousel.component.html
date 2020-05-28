@@ -1,0 +1,25 @@
+<div class="container pt-5 rounded">
+<div class="main-slider">
+  <div class="swiper-container h-100" [swiper]="config">
+    <div class="swiper-wrapper h-100">
+      <div *ngFor="let slide of slides" class="swiper-slide " >
+
+        <div [attr.data-background]="slide.image" class="slide-item swiper-lazy ">
+          <div class="container sl-wrap">
+            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="swiper-scrollbar"></div>
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+</div>
