@@ -14,15 +14,13 @@ export class ProduitCarouselComponent implements OnInit,AfterViewInit {
     clickable: true
   };
   public produits;
-  public _embedded;
   constructor(private produitService:ProduitService) { }
 
   ngOnInit(): void {
       this.produitService.getNomProduits().subscribe(
         data=>{
           this.produits = data;
-          this._embedded = this.produits._embedded;
-          this.produits = this._embedded;
+          console.log(data);
 
 
 
@@ -35,25 +33,34 @@ export class ProduitCarouselComponent implements OnInit,AfterViewInit {
 
   }
 
-
-  ngAfterViewInit(): void {
-    console.log("View+++");
+  ngAfterViewInit(){
     this.config = {
-      slidesPerView: 1,
-      spaceBetween: 0,
+      observer: true,
+      slidesPerView: 5,
+      spaceBetween: 16,
       keyboard: true,
       navigation: true,
-      pagination: this.pagination,
+      pagination: false,
       grabCursor: true,
-      loop: false,
+      loop: true,
       preloadImages: false,
       lazy: true,
-      autoplay: {
-        delay: 6000,
-        disableOnInteraction: false
-      },
-      speed: 500,
-      effect: "slide"
+      breakpoints: {
+        480: {
+          slidesPerView: 1
+        },
+        740: {
+          slidesPerView: 2,
+        },
+        960: {
+          slidesPerView: 3,
+        },
+        1280: {
+          slidesPerView: 4,
+        },
+
+
+      }
     }
   }
 }
