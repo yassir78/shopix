@@ -290,10 +290,11 @@ height: 550px;
           }
           mat-icon{
             color: white;
+            font-size: 20px !important;
           }
           a {
-            background: $color-tertiary
-          ;
+            background: $color-tertiary;
+            font-size: 30px;
             cursor: pointer;
             transition: .3s;
             width: 38px;
@@ -301,7 +302,7 @@ height: 550px;
             background: $grey3;
             border-radius: 50%;
             text-align: center;
-            line-height: 46px;
+            line-height: 70px;
             &:hover {
               background: $color-primary;
             }
@@ -375,7 +376,14 @@ height: 550px;
     }
   }
 }
+.mat-card-product{
+  transition: 2s;
+}
+.mat-card-product:hover{
+  box-shadow: 22px 12px 22px 9px rgba(228,228,228,0.81) !important;
+  transform: translateY(-10px) translateX(5px) !important;
 
+}
 
 
 

@@ -1,6 +1,8 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {SwiperConfigInterface, SwiperPaginationInterface} from "ngx-swiper-wrapper";
 import {ProduitService} from "../../../services/produit.service";
+import {Produit} from "../../../models/produit";
+import {PanierService} from "../../../services/panier.service";
 
 @Component({
   selector: 'app-produit-carousel',
@@ -14,23 +16,17 @@ export class ProduitCarouselComponent implements OnInit,AfterViewInit {
     clickable: true
   };
   public produits;
-  constructor(private produitService:ProduitService) { }
+  constructor(private produitService:ProduitService,private panierService:PanierService) { }
 
   ngOnInit(): void {
       this.produitService.getNomProduits().subscribe(
         data=>{
           this.produits = data;
           console.log(data);
-
-
-
         },error => {
           console.log('error');
-
         }
       )
-
-
   }
 
   ngAfterViewInit(){
@@ -63,4 +59,10 @@ export class ProduitCarouselComponent implements OnInit,AfterViewInit {
       }
     }
   }
+
+  addToPanier(product: Produit,qte:number=1) {
+    console.log('hello there');
+  this.panierService.addToPanier(product,qte);
+  }
+
 }
