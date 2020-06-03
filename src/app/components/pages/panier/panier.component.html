@@ -1,0 +1,73 @@
+
+
+<div class="container mt-3">
+
+  <div class="cart-wrapper sec-padding">
+    <div fxLayout="column" fxLayoutAlign="space-around center" *ngIf="!panierItems.length">
+      <mat-chip-list>
+        <mat-chip color="warn" selected="true">No Items Found.</mat-chip>
+      </mat-chip-list>
+      <div>
+        <a  mat-raised-button routerLink="/accueil/"   color="primary" class="btn-project mt-20">Continue shopping</a>
+      </div>
+    </div>
+    <mat-card *ngIf="panierItems.length"  class="p-0 shadow-lg mb-5 rounded  mt-5" >
+      <div class="mat-table cart-table">
+        <div class="mat-header-row border-0">
+          <div class="mat-header-cell">Produit</div>
+          <div class="mat-header-cell">Nom</div>
+          <div class="mat-header-cell">Prix</div>
+          <div class="mat-header-cell">Quantite</div>
+          <div class="mat-header-cell">Total</div>
+          <div class="mat-header-cell">Action</div>
+        </div>
+        <div *ngFor="let item of panierItems"  class="mat-row  " style="border-color: #00b8ac">
+          <div class="mat-cell"><img [src]="item.product.image"></div>
+          <div class="mat-cell"><a  class="product-name">{{item.product.libelle}}</a></div>
+          <div class="mat-cell price">{{item.product.prix | number : '1.2-2'}}</div>
+          <div class="mat-cell text-muted">
+            <div fxLayout="row" fxLayout.xs="column"  class="text-muted">
+              <div fxLayout="row" fxLayoutAlign="center start">
+                <button mat-icon-button matTooltip="Remove"  class="float-left" (click)="remove(item.product)" >
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <input type="text" name="quantity"  disabled class="form-control input-number float-left text-white " value="{{item.qte}}">
+                <button mat-icon-button matTooltip="Add" class="float-left"  (click)="add(item.product)" >
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+
+            </div>
+          </div>
+          <div class="mat-cell total ">{{item.product.prix * item.qte | number : '1.2-2' }}</div>
+          <div class="mat-cell text-center">
+            <div class="p-1" (click)="delete(item)">
+              <mat-icon>close</mat-icon>
+            </div>
+          </div>
+        </div>
+
+        <div class="mat-row">
+          <div class="mat-cell"><a  mat-raised-button   routerLink="/accueil/"  class="btn text-white" style="background-color: #0E4157"   >Continue shopping</a></div>
+          <div class="mat-cell"></div>
+          <div class="mat-cell"></div>
+          <div class="mat-cell text-right">
+            <div fxLayout="column" fxLayoutAlign="center end" class="grand-total px-2">
+
+              <span class="new-price">Grand total:<span class="ml-3" style="color: #00b8ac;font-size: 20px">{{ total | number : '1.2-2'}}</span> </span>
+            </div>
+          </div>
+          <div class="mat-cell text-center"><a  class="btn text-white"  routerLink="/accueil/connexion" style="background-color: #0E4157">Commander</a></div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+
+
+
+
+
+
+

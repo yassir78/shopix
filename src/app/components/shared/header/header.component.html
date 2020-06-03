@@ -70,13 +70,21 @@
             <mat-icon class="text-white mr-2" style="font-size: 50px;">call</mat-icon>
           </div>
           <div class="text">
-            <p style="font-size: 20px;">N° 0524042233</p>
+            <p style="font-size: 20px;" class="ml-3">N° 0524042233 </p>
           </div>
         </div>
-        <div class="panier pl-4">
-          <mat-icon class="text-white ml-3" style="font-size: 50px;">shopping_cart</mat-icon>
-          <span class="notif_panier text-white">3</span>
+
+          <div class="panier  pl-4">
+            <a routerLink="/accueil/panier" >
+          <mat-icon class="text-white  ml-3" style="font-size: 50px;">shopping_cart</mat-icon>
+          <span class="notif_panier text-white pl-0" >{{panierItems.length}}</span>
+            </a>
         </div>
+
+
+
+
+
       </div>
 
     </div>
@@ -90,7 +98,7 @@
           <div class="col-3"> <a  class="menu_link" routerLink="/accueil">Accueil</a></div>
           <div class="col-3"><a class="menu_link" routerLink="/accueil/boutique" >Boutique</a></div>
           <div class="col-4"> <a class="menu_link" routerLink="/accueil/a-propos">Qui Sommes Nous?</a></div>
-          <div class="col-2"> <a class="menu_link" routerLink="/contact">Contactez-Nous</a></div>
+          <div class="col-2"> <a class="menu_link" routerLink="/accueil/contact">Contactez-Nous</a></div>
         </div>
       </div>
 

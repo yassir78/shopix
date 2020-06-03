@@ -12,6 +12,9 @@ import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";
+import {PanierComponent} from "../pages/panier/panier.component";
+import {MatChipsModule} from "@angular/material/chips";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [AccueilComponent,
@@ -20,6 +23,7 @@ import {MatCardModule} from "@angular/material/card";
     AProposComponent,
     MainCarouselComponent,
     ProduitCarouselComponent,
+    PanierComponent
 
   ],
   imports: [
@@ -27,7 +31,9 @@ import {MatCardModule} from "@angular/material/card";
     BoutiqueRoutingModule,
     SwiperModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatChipsModule,
+    MatButtonModule
   ]
 })
 export class BoutiqueModule {

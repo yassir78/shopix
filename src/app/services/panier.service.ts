@@ -2,39 +2,60 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Produit} from "../models/produit";
 import {PanierItem} from "../models/panier-item";
+import {BehaviorSubject, Observable, Subscriber} from "rxjs";
+import {map} from "rxjs/operators";
 let products  = JSON.parse(localStorage.getItem("panierItem")) || [];
 @Injectable({
   providedIn: 'root'
 })
 export class PanierService {
-
-
-  constructor(private http:HttpClient) { }
+  public panierItems : BehaviorSubject<PanierItem[]> = new BehaviorSubject([]);
+  public obs : Subscriber<{}>;
+  constructor(private http:HttpClient) {
+    this.panierItems.subscribe(products => products = products);
+  }
   addToPanier(product:Produit,qte:number):any{
-    let item = new PanierItem(product,qte);
-    //ajoute
-    console.log('products.ref '+ product.ref);
-    /* let isExist:boolean=products.find((items,index)=>{
-      console.log("products find");
-      console.log("le produit "+items[index]);
-      if(items.product.ref == product.ref){
-        let quantite = products[index].qte + qte;
+    let hasItem = products.find((items, index)=>{
+      if(items.product.ref == product.ref) {
+        let newQte = products[index].qte+ qte;
+        products[index].qte = newQte;
         return true;
       }
     });
-    */
-     products.forEach((value)=> {
-        console.log(value);
-     });
-   /* console.log('le isExist = '+isExist);
-    if(!isExist){
-      products.push(item);
-    }*/
-    products.push(item);
+    if(!hasItem){
+      products.push({product:product,qte:qte});
+    }
     localStorage.setItem("panierItem",JSON.stringify(products));
-    console.log(item.produit);
-    console.log("la quantite "+item.qte);
-
-    // return this.http.post("localhost:7600/shopix-api/paniers/");
+    }
+  getPanierItems():Observable<PanierItem[]>{
+    let items = new Observable(obs => {
+      obs.next(products);
+      obs.complete();
+    });
+    return <Observable<PanierItem[]>>items;
   }
+   updatePanier(product:Produit,qte:number){
+     products.find((items, index)=>{
+       if(items.product.ref == product.ref) {
+         let newQte = products[index].qte+ qte;
+         if(newQte>0){
+           products[index].qte = newQte;
+         }
+
+       }
+     });
+     localStorage.setItem("panierItem",JSON.stringify(products));
+   }
+   delete(item:PanierItem){
+      let index = products.indexOf(item);
+      products.splice(index,1);
+     localStorage.setItem("panierItem",JSON.stringify(products));
+   }
+   calculTotal():number{
+    let total = 0;
+     products.forEach((item)=>{
+        total += item.product.prix * item.qte;
+     })
+     return total;
+   }
 }

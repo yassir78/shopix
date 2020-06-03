@@ -14,6 +14,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import {HttpClientModule} from "@angular/common/http";
+import { ConnexionComponent } from './components/pages/connexion/connexion.component';
+import { InscriptionComponent } from './components/pages/inscription/inscription.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import { CommandeComponent } from './components/pages/commande/commande.component';
+
+
+
 
 
 @NgModule({
@@ -22,20 +29,24 @@ import {HttpClientModule} from "@angular/common/http";
     MenuComponent,
     MainComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ConnexionComponent,
+    InscriptionComponent,
+    CommandeComponent
 
   ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    FormsModule,
-    NgxSpinnerModule,
-    AppRoutingModule,
-    HttpClientModule,
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        FormsModule,
+        NgxSpinnerModule,
+        AppRoutingModule,
+        HttpClientModule,
+        MatFormFieldModule,
 
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

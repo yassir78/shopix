@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {DomaineService} from "../../../services/domaine.service";
+import {PanierService} from "../../../services/panier.service";
+import {PanierItem} from "../../../models/panier-item";
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,26 @@ import {DomaineService} from "../../../services/domaine.service";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  opened = false;
+   opened = false;
   public domaines;
-  constructor(private domaineService:DomaineService) {}
+  public panierItems:PanierItem[] = [];
+  constructor(private domaineService:DomaineService,private panierService:PanierService ) {
+    this.panierService.getPanierItems().subscribe(
+      items => {
+        console.log('this is getPanierItems');
+        console.log(items);
+        this.panierItems = items;
+      console.log(this.panierItems);
+        console.log(this.panierItems.length);}
+
+      ,error => {
+        console.log("error");
+      }
+
+    );
+
+
+  }
   ngOnInit(): void {
    this.domaineService.getNomDomaines().subscribe(
      data=>{
@@ -18,9 +37,10 @@ export class HeaderComponent implements OnInit {
 
      },error => {
      console.log('error');
-
      }
    )
-
   }
+
+
+
 }

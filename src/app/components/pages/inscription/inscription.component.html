@@ -1,0 +1,66 @@
+<div class="body">
+<div class="container w-50 ">
+  <div class="text-center">
+    <img  src="assets/images/shopix.png" height="200px" width="200px">
+  </div>
+  <form class="border p-5 mb-5 shadow-lg rounded" #userForm="ngForm" novalidate (ngSubmit)="onSubmit(userForm.value)">
+    <div class="text-center mb-3">
+      <h3 style="font-size: 30px">Binvenue Chez Shopix</h3>
+    </div>
+    <div class="form-group">
+      <label for="nom" class="label" >Nom</label>
+      <input type="text" class="form-control" id="nom" #nom="ngModel" name="nom" placeholder="Votre nom" required [(ngModel)]="user.nom">
+      <span class="text-danger"  *ngIf="(nom.touched || userForm.submitted) && nom.errors?.required">Name is required</span>
+
+    </div>
+    <div class="form-group">
+      <label for="prenom"  class="label">Prenom</label>
+      <input type="text" class="form-control" id="prenom" #prenom="ngModel"  required name="prenom" placeholder="Votre prenom"  [(ngModel)]="user.prenom">
+      <span class="text-danger"*ngIf="(prenom.touched || userForm.submitted) && prenom.errors?.required">Prenom Obligatoire</span>
+    </div>
+    <div class="form-group">
+      <label for="adresse"  class="label">Adresse</label>
+      <input type="text" class="form-control" id="adresse" #adresse="ngModel" required name="adresse"  placeholder="Votre adresse"  [(ngModel)]="user.adresse">
+      <span class="text-danger" *ngIf="(adresse.touched || userForm.submitted) && adresse.errors?.required">Adresse Obligatoire</span>
+    </div>
+    <div class="form-group">
+      <label for="login"  class="label">Login</label>
+      <input type="text" class="form-control" id="login"  #login="ngModel" required  name="login"  placeholder="login"  [(ngModel)]="user.login">
+      <span class="text-danger" *ngIf="(login.touched || userForm.submitted) && login.errors?.required">Login Obligatoire</span>
+    </div>
+    <div class="form-group">
+      <label for="login"  class="label">Email</label>
+      <input type="email" class="form-control" id="email" #email="ngModel" required name="email" placeholder="Votre email"  [(ngModel)]="user.email">
+      <span class="text-danger" *ngIf="(email.touched || userForm.submitted) && email.errors?.required">Email Obligatoire</span>
+    </div>
+    <div class="form-group">
+      <label for="telephone"  class="label">Telephone</label>
+      <input type="tel" class="form-control" id="telephone" #telephone="ngModel"  required name="telephone"  placeholder="06..."  [(ngModel)]="user.tel">
+      <span class="text-danger" *ngIf="(telephone.touched || userForm.submitted) && telephone.errors?.required">Telephone Obligatoire</span>
+    </div>
+    <div class="form-group">
+      <label for="password"  class="label">Mot de passe</label>
+      <input type="password" class="form-control" id="password" #password="ngModel" required name="password"  [(ngModel)]="user.password">
+      <span class="text-danger" *ngIf="(password.touched || userForm.submitted) && password.errors?.required">Password Obligatoire</span>
+    </div>
+    <div class="form-group">
+      <label for="cpassword"  class="label">Confirmer votre mot de passe</label>
+      <input type="password" class="form-control" id="cpassword" #cpassword="ngModel" required  name="cpassword"  [(ngModel)]="user.cpassword">
+      <span class="text-danger" *ngIf="(cpassword.touched || userForm.submitted ) && cpassword.errors?.required && enable">champ obligatoire</span>
+      <span class="text-danger" *ngIf="!enable && (cpassword.touched || userForm.submitted ) && cpassword.errors?.required">{{messageErreur}}</span>
+    </div>
+    <div class="form-group">
+      <div class="form-check form-check-inline">
+        <input type="radio"  #status="ngModel"  name="status" id="acheteur"  class="form-check-input" value="Acheteur"  [(ngModel)]="user.status">
+        <label class="form-check-label label" for="acheteur">Acheteur</label>
+      </div>
+      <div class="form-check form-check-inline my-1">
+        <input type="radio" #status="ngModel" name="status" id="vendeur" class="form-check-input" value="Vendeur"   [(ngModel)]="user.status">
+        <label class="form-check-label label" for="vendeur">Vendeur</label>
+      </div>
+
+    </div>
+      <button type="submit" class="btn text-white d-block"  style="background-color: #0E4157;">Inscription</button>
+  </form>
+</div>
+</div>

@@ -17,7 +17,6 @@ export class ProduitCarouselComponent implements OnInit,AfterViewInit {
   };
   public produits;
   constructor(private produitService:ProduitService,private panierService:PanierService) { }
-
   ngOnInit(): void {
       this.produitService.getNomProduits().subscribe(
         data=>{
@@ -61,7 +60,7 @@ export class ProduitCarouselComponent implements OnInit,AfterViewInit {
   }
 
   addToPanier(product: Produit,qte:number=1) {
-    console.log('hello there');
+
   this.panierService.addToPanier(product,qte);
   }
 

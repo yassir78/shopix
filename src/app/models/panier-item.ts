@@ -9,7 +9,7 @@ export class PanierItem {
     this._qte = qte;
   }
 
-  get produit(): Produit {
+  get product(): Produit {
     return this._produit;
   }
 

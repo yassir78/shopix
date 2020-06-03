@@ -6,6 +6,10 @@ import {ShopComponent} from "../shop/shop.component";
 import {ContactComponent} from "../contact/contact.component";
 import {A} from "@angular/cdk/keycodes";
 import {AProposComponent} from "../a-propos/a-propos.component";
+import {PanierComponent} from "../pages/panier/panier.component";
+import {ConnexionComponent} from "../pages/connexion/connexion.component";
+import {InscriptionComponent} from "../pages/inscription/inscription.component";
+import {CommandeComponent} from "../pages/commande/commande.component";
 
 
 
@@ -25,7 +29,24 @@ const routes:Routes = [
   {
     path:'a-propos',
     component:AProposComponent
+  },
+  {
+    path:'panier',
+    component:PanierComponent
+  },
+  {
+    path:'connexion',
+    component:ConnexionComponent
+  },
+  {
+    path:'inscription',
+    component:InscriptionComponent
+  },
+  {
+    path:'commande',
+    component:CommandeComponent
   }
+
 ]
 
 

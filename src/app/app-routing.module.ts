@@ -29,8 +29,23 @@ const routes: Routes = [
       {
         path: 'a-propos',
         loadChildren: () => import('./components/boutique/boutique.module').then(t => t.BoutiqueModule)
+      },
+      {
+        path:'panier',
+        loadChildren: () => import('./components/boutique/boutique.module').then(t => t.BoutiqueModule)
+      },
+      {
+        path:'connexion',
+        loadChildren: () => import('./components/boutique/boutique.module').then(t => t.BoutiqueModule)
+      },
+      {
+        path:'inscription',
+        loadChildren: () => import('./components/boutique/boutique.module').then(t => t.BoutiqueModule)
+      },
+      {
+        path:'commande',
+        loadChildren: () => import('./components/boutique/boutique.module').then(t => t.BoutiqueModule)
       }
-
 
     ]
   }];
