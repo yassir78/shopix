@@ -18,6 +18,7 @@ import { ConnexionComponent } from './components/pages/connexion/connexion.compo
 import { InscriptionComponent } from './components/pages/inscription/inscription.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { CommandeComponent } from './components/pages/commande/commande.component';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -46,8 +47,9 @@ import { CommandeComponent } from './components/pages/commande/commande.componen
         HttpClientModule,
         MatFormFieldModule,
 
+
     ],
-  providers: [],
+  providers: [ CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

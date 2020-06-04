@@ -1,3 +1,6 @@
+import {Adresse} from "./adresse";
+import {UserRole} from "./user-role";
+
 export class User {
   public id:number;
   public nom:string;
@@ -6,10 +9,10 @@ export class User {
   public email:string;
   public password:string;
   public cpassword:string;
-  public adresse:string;
+  public status:string;
   public tel:string;
   public active:boolean;
-  public status:string = 'Acheteur';
-
+  public adresse:Adresse[];
+  public userRoles:UserRole[];
 
 }

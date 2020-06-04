@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "../../../models/user";
 import {UserService} from "../../../services/user.service";
+import {Router} from "@angular/router";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-inscription',
@@ -9,7 +11,7 @@ import {UserService} from "../../../services/user.service";
 })
 export class InscriptionComponent implements OnInit {
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService,private router:Router) { }
 
   public user:User = new User();
   public messageErreur:string = "champ obligatoire";
@@ -27,6 +29,7 @@ export class InscriptionComponent implements OnInit {
       console.log("error");
     });
 
+   this.router.navigate(["/accueil/connexion"]);
 
   }
 }
