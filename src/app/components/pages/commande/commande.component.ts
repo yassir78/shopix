@@ -9,6 +9,7 @@ import {AdresseService} from "../../../services/adresse.service";
 import {Adresse} from "../../../models/adresse";
 import {Commande} from "../../../models/commande";
 import {CommandeItem} from "../../../models/commande-item";
+import {CommandeService} from "../../../services/commande.service";
 
 @Component({
   selector: 'app-commande',
@@ -21,7 +22,7 @@ export class CommandeComponent implements OnInit {
   public commande:Commande = new Commande();
   public userData;
   public adresse:Adresse = new Adresse();
-  constructor(private panierService:PanierService,private cookieService:CookieService,private userService:UserService,private adresseService:AdresseService) { }
+  constructor(private panierService:PanierService,private cookieService:CookieService,private userService:UserService,private adresseService:AdresseService,private commandeService:CommandeService) { }
   public panierItems:Observable<PanierItem[]>=of([]) ;
   public products : PanierItem[] = [];
   ngOnInit(): void {
@@ -56,29 +57,34 @@ export class CommandeComponent implements OnInit {
     console.log(this.getCommande());
    this.adresseService.addAdresse(this.user,this.adresse).subscribe(
      data=>{
-       console.log("the address was added successfuly");
+       this.commandeService.save(this.user,this.getCommande()).subscribe(data=>{
+         console.log("saving the commande was done successfuly");
+       },error => {
+         console.log(error);
+       })
 
      },error => {
        console.log("error");
      }
    );
-   console.log(this.products);
+
 
   }
 
 
       getCommande(){
       this.commande.total = this.calculTotal();
-      this.commande.user = this.user;
+
       this.products.forEach(panierItem=>{
         console.log(panierItem);
        let commandeItem:CommandeItem = new CommandeItem();
        commandeItem.produit = panierItem.product;
        commandeItem.qte = panierItem.qte;
-       commandeItem.commande = this.commande;
       this.commande.commandeItems.push(commandeItem);
 
     })
+        console.log("zzzzzzzzzzzzzzzz");
+      console.log(this.commande.commandeItems);
         return this.commande;
   }
 
