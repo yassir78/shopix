@@ -1,9 +1,15 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommandeService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) {}
+
+   save(commande){
+
+  }
+
 }
