@@ -23,14 +23,18 @@ export class CommandeInfoComponent implements OnInit,AfterViewInit{
   ngOnInit(): void {
   }
   viderLocalStorage(){
-    console.log("viderLocalStorage");
+  
     localStorage.clear();
-    this.router.navigateByUrl('/accueil/commandeInfo', { skipLocationChange: true }).then(() => {
-      this.router.navigate(['/accueil/']);
-    });
-    // this.router.navigate(['/accueil/']);
+
+ this.router.navigate(['/accueil/'])
+  .then(() => {
+    window.location.reload();
+  });
   }
+
+
   @ViewChild('content') content:ElementRef;
+
   generatePdf() {
     console.log('generate PDF Method');
     let doc = new jsPDF();
