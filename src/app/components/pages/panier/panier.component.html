@@ -57,7 +57,7 @@
               <span class="new-price">Grand total:<span class="ml-3" style="color: #00b8ac;font-size: 20px">{{ total | number : '1.2-2'}}</span> </span>
             </div>
           </div>
-          <div class="mat-cell text-center"><a  class="btn text-white"  routerLink="/accueil/connexion" style="background-color: #0E4157">Commander</a></div>
+          <div class="mat-cell text-center"><a (click)="checkUser()"  class="btn text-white"  style="background-color: #0E4157">Commander</a></div>
         </div>
       </div>
     </mat-card>

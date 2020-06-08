@@ -10,6 +10,7 @@ import {PanierComponent} from "../pages/panier/panier.component";
 import {ConnexionComponent} from "../pages/connexion/connexion.component";
 import {InscriptionComponent} from "../pages/inscription/inscription.component";
 import {CommandeComponent} from "../pages/commande/commande.component";
+import {CommandeInfoComponent} from "../pages/commande-info/commande-info.component";
 
 
 
@@ -45,6 +46,10 @@ const routes:Routes = [
   {
     path:'commande',
     component:CommandeComponent
+  },
+  {
+    path:'commandeInfo',
+    component:CommandeInfoComponent
   }
 
 ]

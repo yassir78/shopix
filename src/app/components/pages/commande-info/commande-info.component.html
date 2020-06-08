@@ -1,0 +1,94 @@
+<div class="container text-center mt-5">
+  <h1>Merci pour votre shopping , Nous sommes à votre service</h1>
+
+</div>
+<div style="visibility: hidden;position: absolute">
+ <div id="content" #content class="my-5">
+   <div class="container" >
+     <div class="row">
+       <div class="col-12">
+         <div class="card" >
+
+           <div class="card-body p-0 h-50">
+             <div class="text-center my-2 display-4" style="font-weight: 700"> <div>Facture :</div></div>
+
+             <hr class="my-5">
+
+             <div class="row pb-5 p-5">
+               <div class="col-md-6">
+                 <p class="font-weight-bold mb-4">Information du Client</p>
+                 <p class="mb-1">Nom :{{commande.user.nom}}</p>
+                 <p class="mb-1">Prenom :{{commande.user.prenom}}</p>
+                 <p class="mb-1">adresse : Berlin, Germany</p>
+                 <p class="mb-1">codePostal : 6781 45P</p>
+               </div>
+
+               <div class="col-md-6 text-right">
+
+                  <p class="mb-1"><span class="text-muted">Ref: </span> {{commande.ref}}</p>
+                  <p class="mb-1"><span class="text-muted">Date: </span> {{commande.date}}</p>
+                </div>
+             </div>
+
+             <div class="row p-5">
+               <div class="col-md-12">
+                 <table class="table">
+                   <thead>
+                   <tr>
+
+                     <th class="border-0 text-uppercase small font-weight-bold">Nom</th>
+                     <th class="border-0 text-uppercase small font-weight-bold">Description</th>
+                     <th class="border-0 text-uppercase small font-weight-bold">Prix</th>
+                     <th class="border-0 text-uppercase small font-weight-bold">Qte</th>
+
+                     <th class="border-0 text-uppercase small font-weight-bold">Total</th>
+
+
+                   </tr>
+                   </thead>
+                   <tbody>
+                   <tr *ngFor="let commandeItem of commande.commandeItems">
+
+                     <td>{{commandeItem.produit.libelle}}</td>
+                     <td>{{commandeItem.produit.description}}</td>
+                     <td>{{commandeItem.produit.prix}}</td>
+                     <td>{{commandeItem.qte}}</td>
+                     <td style="color: #0E4157">{{commandeItem.produit.prix*commandeItem.qte}} Dhs</td>
+                   </tr>
+
+                   </tbody>
+                 </table>
+               </div>
+             </div>
+
+             <div class="d-flex flex-row-reverse text-white p-4" style="background-color: #0E4157">
+               <div class="py-3 px-5 text-right">
+                 <div class="mb-2">Grand Total</div>
+                 <div class="h2 font-weight-light">{{commande.total}} Dhs</div>
+               </div>
+
+               <!--  <div class="py-3 px-5 text-right">
+                   <div class="mb-2">Discount</div>
+                   <div class="h2 font-weight-light">10%</div>
+                 </div>
+
+                 <div class="py-3 px-5 text-right">
+                   <div class="mb-2">Sub - Total amount</div>
+                   <div class="h2 font-weight-light">$32,432</div>
+                 </div>
+               </div> -->
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+ </div>
+ </div>
+</div>
+<div class="container d-flex justify-content-around my-4" style="margin-left: 160px;">
+  <div><button class="btn btn-success" (click)="generatePdf()">Telecharger votre facture</button></div>
+  <div><button class="btn btn-info"  (click)="viderLocalStorage()">Continer votre shopping</button></div>
+
+
+</div>
+

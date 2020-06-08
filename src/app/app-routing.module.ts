@@ -45,6 +45,10 @@ const routes: Routes = [
       {
         path:'commande',
         loadChildren: () => import('./components/boutique/boutique.module').then(t => t.BoutiqueModule)
+      },
+      {
+        path:'commandeInfo',
+        loadChildren: () => import('./components/boutique/boutique.module').then(t => t.BoutiqueModule)
       }
 
     ]

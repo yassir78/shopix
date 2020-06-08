@@ -33,8 +33,10 @@ console.log(this.user);
      if(data){
        this.error = "";
         this.credential  = data;
-       this.cookieService.set("email",this.credential.email);
-       this.cookieService.set("password",this.credential.password);
+        if(!this.cookieService.get("email") && !this.cookieService.get("password")){
+          this.cookieService.set("email",this.credential.email);
+          this.cookieService.set("password",this.credential.password);
+        }
        this.router.navigate(["/accueil/commande"]);
      }else{
         this.error="email ou mot de passe invalide"

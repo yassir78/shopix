@@ -12,8 +12,7 @@ export class AdresseService {
   addAdresse(user:User,adresse:Adresse){
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Access-Control-Allow-Origin': '*'
+        'Content-Type':  'application/json'
       })};
     return this.http.post(`http://localhost:7600/shopix-api/adresse/email/${user.email}/password/${user.password}`,adresse,httpOptions);
 

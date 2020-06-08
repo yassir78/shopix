@@ -15,6 +15,9 @@ import {MatCardModule} from "@angular/material/card";
 import {PanierComponent} from "../pages/panier/panier.component";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatButtonModule} from "@angular/material/button";
+import {CommandeInfoComponent} from "../pages/commande-info/commande-info.component";
+
+
 
 @NgModule({
   declarations: [AccueilComponent,
@@ -23,7 +26,8 @@ import {MatButtonModule} from "@angular/material/button";
     AProposComponent,
     MainCarouselComponent,
     ProduitCarouselComponent,
-    PanierComponent
+    PanierComponent,
+    CommandeInfoComponent,
 
   ],
   imports: [

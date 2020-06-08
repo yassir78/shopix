@@ -46,6 +46,9 @@ export class PanierService {
      });
      localStorage.setItem("panierItem",JSON.stringify(products));
    }
+   viderPanierItems(){
+    products = [];
+   }
    delete(item:PanierItem){
       let index = products.indexOf(item);
       products.splice(index,1);
@@ -58,4 +61,5 @@ export class PanierService {
      })
      return total;
    }
+
 }

@@ -10,6 +10,13 @@ import {Adresse} from "../../../models/adresse";
 import {Commande} from "../../../models/commande";
 import {CommandeItem} from "../../../models/commande-item";
 import {CommandeService} from "../../../services/commande.service";
+import {Router} from "@angular/router";
+
+function clone(commandeItem: CommandeItem) {
+  let cloneCommandeITem:CommandeItem= new CommandeItem();
+  cloneCommandeITem = commandeItem;
+  return commandeItem;
+}
 
 @Component({
   selector: 'app-commande',
@@ -22,7 +29,7 @@ export class CommandeComponent implements OnInit {
   public commande:Commande = new Commande();
   public userData;
   public adresse:Adresse = new Adresse();
-  constructor(private panierService:PanierService,private cookieService:CookieService,private userService:UserService,private adresseService:AdresseService,private commandeService:CommandeService) { }
+  constructor(private panierService:PanierService,private cookieService:CookieService,private userService:UserService,private adresseService:AdresseService,private commandeService:CommandeService,private router:Router) { }
   public panierItems:Observable<PanierItem[]>=of([]) ;
   public products : PanierItem[] = [];
   ngOnInit(): void {
@@ -35,7 +42,10 @@ export class CommandeComponent implements OnInit {
     this.userService.findByPasswordAndEmail(this.user).subscribe(
       data=>{
         this.userData = data;
+        console.log('sssssssssssssssssssssssssssssssssssssssssssss');
+        console.log(this.userData);
         this.user = this.userData;
+
       },error =>{
         console.log('error');
       }
@@ -53,12 +63,12 @@ export class CommandeComponent implements OnInit {
   }
 
   onSubmit(value: any) {
-    console.log("*********************");
-    console.log(this.getCommande());
+
    this.adresseService.addAdresse(this.user,this.adresse).subscribe(
      data=>{
        this.commandeService.save(this.user,this.getCommande()).subscribe(data=>{
          console.log("saving the commande was done successfuly");
+         this.router.navigate(['/accueil/commandeInfo']);
        },error => {
          console.log(error);
        })
@@ -72,16 +82,15 @@ export class CommandeComponent implements OnInit {
   }
 
 
+
       getCommande(){
       this.commande.total = this.calculTotal();
-
       this.products.forEach(panierItem=>{
-        console.log(panierItem);
        let commandeItem:CommandeItem = new CommandeItem();
        commandeItem.produit = panierItem.product;
        commandeItem.qte = panierItem.qte;
-      this.commande.commandeItems.push(commandeItem);
-
+      this.commande.commandeItems.push(clone(commandeItem));
+      console.log("this is foreach loooooooooooop");
     })
         console.log("zzzzzzzzzzzzzzzz");
       console.log(this.commande.commandeItems);

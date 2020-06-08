@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {PanierService} from "../../../services/panier.service";
 import {PanierItem} from "../../../models/panier-item";
 import {Produit} from "../../../models/produit";
+import {CookieService} from "ngx-cookie-service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-panier',
@@ -11,9 +13,10 @@ import {Produit} from "../../../models/produit";
 export class PanierComponent implements OnInit {
   panierItems:PanierItem[]=[];
   total:number=0;
-  constructor(private panierService:PanierService) {
+  constructor(private panierService:PanierService,private cookieService:CookieService,private router:Router) {
 
   }
+  lien:string;
 
   ngOnInit(): void {
     this.panierService.getPanierItems().subscribe(
@@ -37,5 +40,16 @@ export class PanierComponent implements OnInit {
   delete(item:PanierItem){
    this.panierService.delete(item);
     this.total=this.panierService.calculTotal();
+  }
+
+  checkUser() {
+    let email,password;
+    email=this.cookieService.get("email");
+    password=this.cookieService.get("password");
+    if(email && password){
+        this.router.navigate(['/accueil/commande']);
+    }else{
+      this.router.navigate(['/accueil/connexion']);
+    }
   }
 }

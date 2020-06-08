@@ -8,18 +8,16 @@ import {PanierItem} from "../../../models/panier-item";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit,OnChanges {
    opened = false;
   public domaines;
   public panierItems:PanierItem[] = [];
   constructor(private domaineService:DomaineService,private panierService:PanierService ) {
+    console.log("contructor header ");
     this.panierService.getPanierItems().subscribe(
       items => {
-        console.log('this is getPanierItems');
-        console.log(items);
         this.panierItems = items;
-      console.log(this.panierItems);
-        console.log(this.panierItems.length);}
+}
 
       ,error => {
         console.log("error");
@@ -29,8 +27,12 @@ export class HeaderComponent implements OnInit {
 
 
   }
+  ngOnChanges(){
+  console.log("onChanges");
+  }
   ngOnInit(): void {
-   this.domaineService.getNomDomaines().subscribe(
+    console.log("init header ");
+    this.domaineService.getNomDomaines().subscribe(
      data=>{
       this.domaines = data;
        console.log(data);

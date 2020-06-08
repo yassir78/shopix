@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {PanierService} from "../../../services/panier.service";
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'app-accueil',
@@ -9,9 +11,14 @@ export class AccueilComponent implements OnInit {
   public config = {
 
   }
-  constructor() { }
+  constructor(private panierService:PanierService,@Inject(DOCUMENT) private document) {
+    console.log("constructor accueil");
+   // this.document.window.reload();
+
+  }
 
   ngOnInit(): void {
+    console.log('init accueil');
   }
 
 }
