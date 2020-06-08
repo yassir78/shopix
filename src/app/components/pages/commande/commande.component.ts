@@ -66,11 +66,14 @@ export class CommandeComponent implements OnInit {
 
    this.adresseService.addAdresse(this.user,this.adresse).subscribe(
      data=>{
+       console.log('eeeeeeeeeeee');
+       console.log(data);
+       console.log("zzzzzzzzzzzzzzz");
        this.commandeService.save(this.user,this.getCommande()).subscribe(data=>{
          console.log("saving the commande was done successfuly");
          this.router.navigate(['/accueil/commandeInfo']);
        },error => {
-         console.log(error);
+        console.log(error);
        })
 
      },error => {

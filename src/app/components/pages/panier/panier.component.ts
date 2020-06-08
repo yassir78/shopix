@@ -4,6 +4,9 @@ import {PanierItem} from "../../../models/panier-item";
 import {Produit} from "../../../models/produit";
 import {CookieService} from "ngx-cookie-service";
 import {Router} from "@angular/router";
+import {UserService} from "../../../services/user.service";
+import {User} from "../../../models/user";
+
 
 @Component({
   selector: 'app-panier',
@@ -13,12 +16,14 @@ import {Router} from "@angular/router";
 export class PanierComponent implements OnInit {
   panierItems:PanierItem[]=[];
   total:number=0;
-  constructor(private panierService:PanierService,private cookieService:CookieService,private router:Router) {
+  user:User = new User();
+  constructor(private panierService:PanierService,private cookieService:CookieService,private router:Router,private userService:UserService) {
 
   }
   lien:string;
 
   ngOnInit(): void {
+
     this.panierService.getPanierItems().subscribe(
        data =>{
          this.panierItems = data;
@@ -28,6 +33,7 @@ export class PanierComponent implements OnInit {
     }
     );
      this.total=this.panierService.calculTotal();
+
   }
   add(product:Produit,qte=1){
     this.panierService.updatePanier(product,qte);
@@ -44,12 +50,28 @@ export class PanierComponent implements OnInit {
 
   checkUser() {
     let email,password;
-    email=this.cookieService.get("email");
-    password=this.cookieService.get("password");
-    if(email && password){
-        this.router.navigate(['/accueil/commande']);
+    if(this.cookieService.get("email") && this.cookieService.get("password")){
+      email = this.cookieService.get("email");
+      password = this.cookieService.get("password");
+      this.user.email = email;
+      this.user.password = password;
+      console.log(this.user);
+      this.userService.findByPasswordAndEmail(this.user).subscribe(data=>{
+        if(data){
+          console.log('user found');
+          this.router.navigate(['/accueil/commande']);
+        }else{
+          console.log(data);
+          this.router.navigate(['/accueil/connexion']);
+        }
+      },error => {
+        console.log(error);
+        console.log('error within checkUser');
+      });
     }else{
+      console.log('cookies are empty');
       this.router.navigate(['/accueil/connexion']);
     }
+
   }
 }

@@ -43,7 +43,7 @@ console.log(this.user);
      }
 
    },error => {
-     console.log("error");
+     console.log(error);
    })
 
   }

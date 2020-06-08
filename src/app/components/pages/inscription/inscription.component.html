@@ -7,6 +7,7 @@
     <div class="text-center mb-3">
       <h3 style="font-size: 30px">Binvenue Chez Shopix</h3>
     </div>
+    <span class="text-danger" *ngIf="enable1">{{message}}</span>
     <div class="form-group">
       <label for="nom" class="label" >Nom</label>
       <input type="text" class="form-control" id="nom" #nom="ngModel" name="nom" placeholder="Votre nom" required [(ngModel)]="user.nom">
@@ -57,10 +58,15 @@
       <div class="form-check form-check-inline my-1">
         <input type="radio" #status="ngModel" name="status" id="vendeur" class="form-check-input" value="Vendeur"   [(ngModel)]="user.status">
         <label class="form-check-label label" for="vendeur">Vendeur</label>
+
       </div>
 
     </div>
+    <div class="row">
       <button type="submit" class="btn text-white d-block"  style="background-color: #0E4157;">Inscription</button>
+      <a class="text-primary mt-1 ml-4" routerLink="/accueil/connexion">Connectez-vous...</a>
+    </div>
+
   </form>
 </div>
 </div>
