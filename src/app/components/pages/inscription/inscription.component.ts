@@ -14,22 +14,28 @@ export class InscriptionComponent implements OnInit {
   constructor(private userService:UserService,private router:Router) { }
 
   public user:User = new User();
-  public messageErreur:string = "champ obligatoire";
-  public enable:boolean = true;
+  public messageErreur:string = "";
+  public enable:boolean = false;
   ngOnInit(): void {
+    this.user.status = "Acheteur";
   }
   onSubmit(value:any){
-     this.enable=false;
+     console.log(this.user);
     if(this.user.password != this.user.cpassword){
       this.messageErreur ="les mots de passe sont differents";
     }
-    this.userService.saveUser(this.user).subscribe(data =>{
-      console.log("saving the user worked");
-    },error => {
-      console.log("error");
-    });
+    if(this.user.nom && this.user.prenom && this.user.adresse && this.user.email && this.user.tel && this.user.password && this.user.cpassword && (this.user.password == this.user.cpassword))
+    {
+      this.userService.saveUser(this.user).subscribe(data =>{
 
-   this.router.navigate(["/accueil/connexion"]);
+        this.router.navigate(["/accueil/connexion"]);
+      },error => {
+        console.log("error");
+      });
+    }
+
+
+
 
   }
 }
