@@ -1,0 +1,35 @@
+<mat-toolbar color="primary"  class="fix-nav top-nav">
+  <button type="button" mat-icon-button class="visible-md" (click)="toggleSidebar()">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  <div class="nav-brand">
+    <a href=""><img src="../../../../assets/images/shopix.png" alt="no image" class="pt-3" width="200px"
+                    height="150px" style="margin: 0;"></a>
+  </div>
+  <span class="nav-spacer"></span>
+  <form class="hidden-sm" style="margin-right: 20px; margin-top: 8px">
+    <mat-form-field style="font-size: 1rem;">
+      <input matInput placeholder="Chercher">
+    </mat-form-field>
+  </form>
+  <button class="hidden-sm" mat-icon-button [matMenuTriggerFor]="profile">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #profile="matMenu" [overlapTrigger]="false">
+    <button mat-menu-item>
+      <mat-icon>person</mat-icon>
+      <span>Compte</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>inbox</mat-icon>
+      <span>Messages</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>Parametres</span>
+    </button>
+  </mat-menu>
+  <button mat-icon-button (click)="onLoggedout()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
