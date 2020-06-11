@@ -19,7 +19,8 @@ import { InscriptionComponent } from './components/pages/inscription/inscription
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { CommandeComponent } from './components/pages/commande/commande.component';
 import { CookieService } from 'ngx-cookie-service';
-
+import {SharedModule} from './shared/shared.module';
+import {CoreModule} from './core/core.module';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { CookieService } from 'ngx-cookie-service';
         AppRoutingModule,
         HttpClientModule,
         MatFormFieldModule,
-
+         CoreModule,
+        SharedModule
 
     ],
   providers: [ CookieService ],

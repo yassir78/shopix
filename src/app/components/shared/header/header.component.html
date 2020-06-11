@@ -30,7 +30,7 @@
 
 
 <div class="nav bg-pri">
-  <mat-sidenav  [opened]="false" mode="over" #start class="sidenav">
+  <mat-sidenav  [opened]="false" mode="over" #start class="header-sidenav">
     <div *ngIf="domaines">
     <div class="triangle"></div>
     <div class="sidebar-items py-3" fxLayout="column" (mouseleave)="start.close()" *ngFor="let domaine of domaines._embedded.domaines">
