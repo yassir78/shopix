@@ -1,0 +1,77 @@
+<div class="container my-4 py-3">
+<h1>Ventilateurs</h1>
+  <div class="row">
+    <div class="col-lg-3 col-md-6 mb-4" *ngFor="let nb of [0,1,2,3]">
+      <div class="card h-100 transform">
+        <a href="#"><img class="card-img-top" [src]="produits._embedded.produits[nb].image" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="#">{{produits._embedded.produits[nb].libelle}}</a>
+          </h4>
+          <div class="stars">
+            <mat-icon class=" mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+          </div>
+          <h4>{{produits._embedded.produits[nb].prix}}&nbsp;Dhs</h4>
+          <p class="card-text">{{produits._embedded.produits[nb].description}}</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn rounded-circle p-1 hover-me" style="background-color: #9c9c9c"> <mat-icon style="color: #FFF" class="rounded "  role="img" class="mat-icon notranslate mat-icon-lg material-icons mat-icon-no-color" aria-hidden="true">shopping_cart</mat-icon></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1>Tondeuses</h1>
+  <div class="row">
+    <div class="col-lg-3 col-md-6 mb-4" *ngFor="let nb of [0,1,2,3]">
+      <div class="card h-100 transform">
+        <a href="#"><img class="card-img-top" [src]="produits._embedded.produits[nb].image" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="#">{{produits._embedded.produits[nb].libelle}}</a>
+          </h4>
+          <div class="stars">
+            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+          </div>
+          <h4>{{produits._embedded.produits[nb].prix}}&nbsp;Dhs</h4>
+          <p class="card-text">{{produits._embedded.produits[nb].description}}</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn rounded-circle p-1 hover-me" style="background-color: #9c9c9c"> <mat-icon style="color: #FFF" class="rounded "  role="img" class="mat-icon notranslate mat-icon-lg material-icons mat-icon-no-color" aria-hidden="true">shopping_cart</mat-icon></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1>Articles vus récemment</h1>
+  <div class="row">
+    <div class="col-lg-3 col-md-6 mb-4" *ngFor="let nb of [0,1,2,3]">
+      <div class="card h-100 transform">
+        <a href="#"><img class="card-img-top" [src]="produits._embedded.produits[nb].image" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="#">{{produits._embedded.produits[nb].libelle}}</a>
+          </h4>
+          <div class="stars">
+            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+          </div>
+          <h4>{{produits._embedded.produits[nb].prix}}&nbsp;Dhs</h4>
+          <p class="card-text">{{produits._embedded.produits[nb].description}}</p>
+        </div>
+        <div class="card-footer">
+         <button class="btn rounded-circle p-1 hover-me" style="background-color: #9c9c9c"> <mat-icon style="color: #FFF" class="rounded "  role="img" class="mat-icon notranslate mat-icon-lg material-icons mat-icon-no-color" aria-hidden="true">shopping_cart</mat-icon></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

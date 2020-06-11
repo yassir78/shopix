@@ -1,5 +1,6 @@
 import {User} from "./user";
 import {CommandeItem} from "./commande-item";
+import * as uuid from 'uuid';
 
 export class Commande {
 
@@ -10,7 +11,7 @@ export class Commande {
   public user:User;
   public commandeItems:CommandeItem[];
 constructor() {
-  this.ref = "CMD_1";
+  this.ref = uuid.v4();
   this.date = new Date();
   this.user = new User();
   this.commandeItems = [];

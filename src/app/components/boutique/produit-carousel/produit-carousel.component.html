@@ -1,11 +1,11 @@
-
-<div class="product-item swiper-container" *ngIf="produits" [swiper]="config" >
+<div class="container">
+<div class=" product-item swiper-container" *ngIf="produits" [swiper]="config" >
   <div class="swiper-wrapper h-100">
     <div *ngFor="let product of produits._embedded.produits" class="swiper-slide">
       <mat-card fxLayout="column" class="mat-card-product">
         <div class="product-img">
           <a class="product-link" [routerLink]="">
-            <img [src]="product.image" alt="">
+            <img [src]="product.image" alt="" height="200px" width="200px">
           </a>
         </div>
         <div class="product-info-wrapper">
@@ -22,7 +22,7 @@
           </div>
           <div class="price-wrap" fxLayout="row" fxLayoutAlign="space-between center">
             <p> {{product.prix }} DHS</p>
-            <a (click)="addToPanier(product)"><mat-icon class="mat-icon-lg mat-icon material-icons ">shopping_cart</mat-icon></a>
+            <a (click)="addToPanier(product)"><mat-icon  role="img" class="mat-icon notranslate mat-icon-lg material-icons mat-icon-no-color" aria-hidden="true">shopping_cart</mat-icon></a>
           </div>
           <div class="icons" fxLayout="column">
             <a ><mat-icon class="mat-icon-lg mat-icon material-icons mr-10">favorite_border</mat-icon></a>
@@ -39,6 +39,7 @@
   <div class="swiper-button-next"></div>
 </div>
 
+</div>
 
 
 

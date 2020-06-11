@@ -16,6 +16,7 @@ import {PanierComponent} from "../pages/panier/panier.component";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatButtonModule} from "@angular/material/button";
 import {CommandeInfoComponent} from "../pages/commande-info/commande-info.component";
+import { ProduitsComponent } from './produits/produits.component';
 
 
 
@@ -28,6 +29,7 @@ import {CommandeInfoComponent} from "../pages/commande-info/commande-info.compon
     ProduitCarouselComponent,
     PanierComponent,
     CommandeInfoComponent,
+    ProduitsComponent,
 
   ],
   imports: [

@@ -33,10 +33,12 @@
   <mat-sidenav  [opened]="false" mode="over" #start class="sidenav">
     <div *ngIf="domaines">
     <div class="triangle"></div>
-    <div class="sidebar-items" fxLayout="column" (mouseleave)="start.close()" *ngFor="let domaine of domaines._embedded.domaines">
-      <hr>
-      <a mat-list-item class="d-block">{{domaine.nom}}</a>
-      <hr>
+    <div class="sidebar-items py-3" fxLayout="column" (mouseleave)="start.close()" *ngFor="let domaine of domaines._embedded.domaines">
+      <div class="p-3 d-flex">
+        <mat-icon class="pr-5">android</mat-icon>
+      <a mat-list-item class="d-block font-weight-bold ">{{domaine.nom}}</a>
+      </div>
+
     </div>
     </div>
 
