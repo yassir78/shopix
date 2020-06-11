@@ -21,6 +21,7 @@ import { CommandeComponent } from './components/pages/commande/commande.componen
 import { CookieService } from 'ngx-cookie-service';
 import {SharedModule} from './shared/shared.module';
 import {CoreModule} from './core/core.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -46,7 +47,9 @@ import {CoreModule} from './core/core.module';
         HttpClientModule,
         MatFormFieldModule,
          CoreModule,
-        SharedModule
+        SharedModule,
+        NgbModule
+
 
     ],
   providers: [ CookieService ],

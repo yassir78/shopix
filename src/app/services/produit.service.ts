@@ -13,5 +13,9 @@ export class ProduitService {
   getNomProduits()  {
     return this.http.get("http://localhost:7600/produits");
   }
+  findAll(){
+    return this.http.get("http://localhost:7600/shopix-api/produits/");
+
+  }
 
 }

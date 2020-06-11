@@ -1,1 +1,33 @@
-<p>produits works!</p>
+<p>You can do filter table data, in this case with observables and our <code>NgbHighlight</code> component used in Typeahead</p>
+
+<form>
+  <div class="form-group form-inline">
+    Full text search: <input class="form-control ml-2" type="text" [formControl]="filter"/>
+  </div>
+</form>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Reference</th>
+    <th scope="col">Libelle</th>
+    <th scope="col">Marque</th>
+    <th scope="col">Prix</th>
+    <th scope="col">Stock</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let produit of products ">
+    <td>
+      <img [src]="produit.image"  class="mr-2" style="width: 100px">
+      <ngb-highlight [result]="produit.ref" [term]="filter.value"></ngb-highlight>
+    </td>
+    <td><ngb-highlight [result]="produit.libelle " [term]="filter.value"></ngb-highlight></td>
+    <td><ngb-highlight [result]="produit.marque " [term]="filter.value"></ngb-highlight></td>
+    <td><ngb-highlight [result]="produit.prix " [term]="filter.value"></ngb-highlight></td>
+    <td><ngb-highlight [result]="produit.stock" [term]="filter.value"></ngb-highlight></td>
+    <td><ngb-highlight ><button class="btn">Editer</button><button class="btn">Supprimer</button></ngb-highlight></td>
+  </tr>
+  </tbody>
+</table>

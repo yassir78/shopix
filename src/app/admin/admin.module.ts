@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, DecimalPipe} from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
@@ -18,6 +18,11 @@ import { FournisseursComponent } from './fournisseurs/fournisseurs.component';
 import { ClientsComponent } from './clients/clients.component';
 import { PayementsComponent } from './payements/payements.component';
 import { PromotionsComponent } from './promotions/promotions.component';
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatTableModule} from "@angular/material/table";
+import {NgbPaginationModule, NgbTypeaheadModule} from "@ng-bootstrap/ng-bootstrap";
+import {MaterialModule} from "../modules/material/material.module";
 
 @NgModule({
   imports: [
@@ -29,8 +34,16 @@ import { PromotionsComponent } from './promotions/promotions.component';
     MatIconModule,
     MatInputModule,
     MatMenuModule,
-    MatListModule
+    MatListModule,
+    MatPaginatorModule,
+    FormsModule,
+    MatTableModule,
+    NgbTypeaheadModule,
+    ReactiveFormsModule,
+    NgbPaginationModule,
+    MaterialModule
   ],
-  declarations: [LayoutComponent, TopNavComponent, SideNavComponent, ProduitsComponent, CommandesComponent, FournisseursComponent, ClientsComponent, PayementsComponent, PromotionsComponent]
+  declarations: [LayoutComponent, TopNavComponent, SideNavComponent, ProduitsComponent, CommandesComponent, FournisseursComponent, ClientsComponent, PayementsComponent, PromotionsComponent],
+  providers: [DecimalPipe],
 })
 export class AdminModule {}
