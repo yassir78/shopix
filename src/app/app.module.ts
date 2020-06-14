@@ -22,6 +22,8 @@ import { CookieService } from 'ngx-cookie-service';
 import {SharedModule} from './shared/shared.module';
 import {CoreModule} from './core/core.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UpdateClientDialogComponent } from './dialogs/update-client-dialog/update-client-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     ConnexionComponent,
     InscriptionComponent,
-    CommandeComponent
+    CommandeComponent,
+    UpdateClientDialogComponent
 
   ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -46,9 +49,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         AppRoutingModule,
         HttpClientModule,
         MatFormFieldModule,
-         CoreModule,
+        CoreModule,
         SharedModule,
-        NgbModule
+        NgbModule,
+        MatDialogModule
 
 
     ],
