@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { CommandeService } from 'src/app/services/commande.service';
+
+
+
 
 @Component({
   selector: 'app-commandes',
@@ -6,10 +10,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./commandes.component.scss']
 })
 export class CommandesComponent implements OnInit {
+ public commandes;
 
-  constructor() { }
+
+  constructor(private commandeService:CommandeService) {
+
+
+  }
 
   ngOnInit(): void {
+    this.commandeService.findAll().subscribe(data=>{
+      this.commandes = data as [] ;
+      console.log("olllllllll");
+      console.log(data);
+    }, error => {
+      console.log(error)
+    });
   }
+
 
 }
