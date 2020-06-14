@@ -1,1 +1,27 @@
-<p>commandes works!</p>
+<div class="text-center">
+
+  <table class="table table-striped ">
+    <thead>
+    <tr>
+      <th scope="col">#Référence</th>
+      <th scope="col">Total</th>
+      <th scope="col">Etat</th>
+      <th scope="col">Client</th>
+      <th scope="col">Date</th>
+      <th scope="col">Action</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let commande of commandes; index as i">
+      <th scope="row">{{ commande.ref }}</th>
+      <td>{{ commande.total }}</td>
+      <td class="text-warning">En cours... </td>
+      <td>{{ commande.user.nom}} {{ commande.user.prenom}}</td>
+      <td>{{ commande.date}}</td>
+      <td><button class="btn btn-info">Editer</button>&nbsp;<button class="btn btn-danger">Supprimer</button></td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
