@@ -5,6 +5,8 @@ import {ProduitService} from "../../services/produit.service";
 import {Produit} from "../../models/produit";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {element} from "protractor";
+import {CategorieService} from "../../services/categorie.service";
+import {Categorie} from "../../models/categorie";
 
 @Component({
   selector: 'app-add-client-dialog',
@@ -12,7 +14,7 @@ import {element} from "protractor";
   styleUrls: ['./add-client-dialog.component.scss']
 })
 export class AddClientDialogComponent implements OnInit {
-  domaines: Domaine[];
+  domaines: Categorie[];
   image: string;
   domaine: string;
   marque: string;
@@ -23,13 +25,14 @@ export class AddClientDialogComponent implements OnInit {
   stock: number;
   Error: string;
 
-  constructor(public dialogRef: MatDialogRef<AddClientDialogComponent>,
-              private domaineService: DomaineService, private produitService: ProduitService) {
+  constructor(public dialogRef: MatDialogRef<AddClientDialogComponent>,private categorieService:CategorieService, private produitService: ProduitService) {
   }
 
   ngOnInit(): void {
-    this.domaineService.findAll().subscribe(data => {
-      this.domaines = data;
+    this.categorieService.findAll().subscribe(data => {
+      console.log('/////////////////////');
+      console.log(data);
+      this.domaines =<Categorie[]> data;
     }, error => {
       console.log(error);
     })
@@ -59,12 +62,13 @@ export class AddClientDialogComponent implements OnInit {
     produit.marque = this.marque;
     if (this.libelle && isNaN(this.stock) == false && isNaN(this.prix) == false && this.description && this.marque && this.image) {
       this.domaines.forEach(element=>{
-        if(element.nom = this.domaine){
-          produit.domaine = element;
+        if(element.nom == this.domaine){
+          console.log('la categorie');
+          console.log(element);
+          produit.categorie = element;
           return;
         }
-      })
-      console.log('eeeeeeeeeeeeeeeeee');
+      });
       console.log(produit);
       this.produitService.findByLibelle(produit).subscribe(data => {
         if (data) {

@@ -50,5 +50,12 @@ export class ProduitService {
       })
     };
     return this.http.post(`http://localhost:7600/shopix-api/produits/`, produit, httpOptions);
+  };
+  findByCategorie(categorie:string){
+    return this.http.get(`http://localhost:7600/shopix-api/produits/categorie/${categorie}`);
+  };
+  findByPrixLessThan(prix:number){
+    return this.http.get(`http://localhost:7600/shopix-api/produits/prix/${prix}`);
   }
+
 }

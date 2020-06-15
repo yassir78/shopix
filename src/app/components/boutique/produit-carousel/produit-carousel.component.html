@@ -1,5 +1,6 @@
 <div class="container">
-<div class=" product-item swiper-container" *ngIf="produits" [swiper]="config" >
+  <h3 class="mt-4 pt-4">Les plus demandés</h3>
+  <div class=" product-item swiper-container" *ngIf="produits" [swiper]="config" >
   <div class="swiper-wrapper h-100">
     <div *ngFor="let product of produits._embedded.produits" class="swiper-slide">
       <mat-card fxLayout="column" class="mat-card-product">

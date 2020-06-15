@@ -17,6 +17,7 @@ import {MatChipsModule} from "@angular/material/chips";
 import {MatButtonModule} from "@angular/material/button";
 import {CommandeInfoComponent} from "../pages/commande-info/commande-info.component";
 import { ProduitsComponent } from './produits/produits.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -32,15 +33,16 @@ import { ProduitsComponent } from './produits/produits.component';
     ProduitsComponent,
 
   ],
-  imports: [
-    CommonModule,
-    BoutiqueRoutingModule,
-    SwiperModule,
-    MatIconModule,
-    MatCardModule,
-    MatChipsModule,
-    MatButtonModule
-  ]
+    imports: [
+        CommonModule,
+        BoutiqueRoutingModule,
+        SwiperModule,
+        MatIconModule,
+        MatCardModule,
+        MatChipsModule,
+        MatButtonModule,
+        FormsModule
+    ]
 })
 export class BoutiqueModule {
 }
