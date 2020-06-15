@@ -32,10 +32,16 @@ export class CommandeService {
     return command1;
   }
 
-  
+
   findAll(){
     return this.http.get("http://localhost:7600/shopix-api/commandes/");
 
+  }
+  nbrCommandes(){
+    return this.http.get("http://localhost:7600/shopix-api/commandes/nbrCommandes");
+  }
+  findByEtat(etat:string){
+    return this.http.get(`http://localhost:7600/shopix-api/commandes/etat/${etat}`);
   }
 
 

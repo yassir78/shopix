@@ -9,6 +9,7 @@ export class Commande {
   public total:number;
   public date:Date;
   public user:User;
+  public etatCommande:String="En cours";
   public commandeItems:CommandeItem[];
 constructor() {
   this.ref = uuid.v4();

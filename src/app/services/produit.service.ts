@@ -40,4 +40,15 @@ export class ProduitService {
   findByLibelle(prod:Produit){
     return this.http.get(`http://localhost:7600/shopix-api/produits/libelle/${prod.libelle}`);
   }
+  nbrProduit(){
+    return this.http.get(`http://localhost:7600/shopix-api/produits/nbrProtuit`);
+  }
+  save(produit:Produit){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.post(`http://localhost:7600/shopix-api/produits/`, produit, httpOptions);
+  }
 }

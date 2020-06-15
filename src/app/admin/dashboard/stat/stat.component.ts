@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {childRoutes} from "../../child-routes";
 
 @Component({
   selector: 'app-stat',
@@ -10,8 +11,12 @@ export class StatComponent implements OnInit {
   @Input() icon: string;
   @Input() count: number;
   @Input() label: string;
-  @Input() data: number;
-  constructor() {}
+  @Input() route:string;
 
-  ngOnInit() {}
+  constructor() {
+  }
+
+  ngOnInit() {
+
+  }
 }

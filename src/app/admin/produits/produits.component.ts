@@ -8,6 +8,7 @@ import {Produit} from "../../models/produit";
 import {ProduitService} from "../../services/produit.service";
 import {MatDialog} from "@angular/material/dialog";
 import {UpdateClientDialogComponent} from "../../dialogs/update-client-dialog/update-client-dialog.component";
+import {AddClientDialogComponent} from "../../dialogs/add-client-dialog/add-client-dialog.component";
 
 
 let produits: Produit[]=[];
@@ -29,10 +30,8 @@ export class ProduitsComponent {
 
   produits$: Observable<Produit[]>;
   filter = new FormControl('');
-
+  addedProduct:Produit=new Produit();
   constructor(pipe: DecimalPipe, private produitService: ProduitService,public dialog: MatDialog) {
-
-
     this.produitService.findAll().subscribe(data => {
       produits = <Produit[]>data;
       this.produits$ = this.filter.valueChanges.pipe(
@@ -70,4 +69,22 @@ export class ProduitsComponent {
     });
   };
 
+  openDialogAdd() {
+    const dialogRef1 = this.dialog.open(AddClientDialogComponent,{
+      height: '60vh',
+      width: '60vw',
+    });
+
+    dialogRef1.afterClosed().subscribe(result => {
+      this.produitService.findAll().subscribe(data => {
+        produits = <Produit[]>data;
+        this.produits$ = this.filter.valueChanges.pipe(
+          startWith(''),
+          map(text => search(text))
+        );
+      }, error => {
+        console.log(error);
+      });
+    });
+  }
 }

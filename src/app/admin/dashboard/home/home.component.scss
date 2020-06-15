@@ -1,4 +1,10 @@
 @import '~src/scss/variables';
+
 .location-icon {
   color: $primary-color;
+}
+
+.chartContainer {
+  width: 70vw;
+  display: block;
 }
