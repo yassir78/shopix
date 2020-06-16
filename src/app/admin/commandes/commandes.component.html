@@ -1,5 +1,4 @@
-<div class="text-center">
-
+<div class="container custom-container">
   <table class="table table-striped ">
     <thead>
     <tr>
@@ -19,9 +18,12 @@
       <td class="text-warning">En cours... </td>
       <td>{{ commande.user.nom}} {{ commande.user.prenom}}</td>
       <td>{{ commande.date}}</td>
-      <td><button class="btn btn-info">Editer</button>&nbsp;<button class="btn btn-danger">Supprimer</button></td>
+      <td><button class="btn btn-info" (click)="editCommandeRequest(commande)">Editer</button>&nbsp;<button class="btn btn-danger" (click)="delete(commande)">Supprimer</button></td>
     </tr>
     </tbody>
   </table>
-
 </div>
+
+
+
+

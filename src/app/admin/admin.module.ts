@@ -23,6 +23,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatTableModule} from "@angular/material/table";
 import {NgbPaginationModule, NgbTypeaheadModule} from "@ng-bootstrap/ng-bootstrap";
 import {MaterialModule} from "../modules/material/material.module";
+import { CommandeEditComponent } from './commande-edit/commande-edit.component';
+import {MatDialogModule} from "@angular/material/dialog";
+
 
 @NgModule({
   imports: [
@@ -41,9 +44,15 @@ import {MaterialModule} from "../modules/material/material.module";
     NgbTypeaheadModule,
     ReactiveFormsModule,
     NgbPaginationModule,
-    MaterialModule
+    MaterialModule,
+    MatDialogModule
   ],
-  declarations: [LayoutComponent, TopNavComponent, SideNavComponent, ProduitsComponent, CommandesComponent, FournisseursComponent, ClientsComponent, PayementsComponent, PromotionsComponent],
+  declarations: [LayoutComponent, TopNavComponent, SideNavComponent, ProduitsComponent, CommandesComponent, FournisseursComponent, ClientsComponent, PayementsComponent, PromotionsComponent, CommandeEditComponent],
   providers: [DecimalPipe],
+  entryComponents: [
+    CommandeEditComponent
+  ],
+
+
 })
 export class AdminModule {}

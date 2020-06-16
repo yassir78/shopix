@@ -3,7 +3,6 @@ import {CommandeItem} from "./commande-item";
 import * as uuid from 'uuid';
 
 export class Commande {
-
   public id:number;
   public ref:string;
   public total:number;
