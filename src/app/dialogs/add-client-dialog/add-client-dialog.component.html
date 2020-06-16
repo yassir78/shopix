@@ -1,0 +1,47 @@
+<div class="">
+  <h1>Ajouter un produit</h1>
+  <div>
+    <label>Ref</label>
+    <input type="text" class="form-control" [(ngModel)]="ref">
+  </div>
+  <div class="mt-2">
+    <label for="file" id="image" class="btn btn-success d-block file">Image</label>
+    <input type="file" name="photo" accept="image/x-png,image/gif,image/jpeg" id="file"
+           style="visibility: hidden;" (change)="onFileSelected($event)">
+  </div>
+  <div class="negative">
+    <label>Marque</label>
+    <input type="text" class="form-control" [(ngModel)]="marque">
+  </div>
+  <div>
+    <label>Libelle</label>
+    <input type="text" class="form-control" [(ngModel)]="libelle">
+  </div>
+  <div>
+    <label>Description</label>
+    <input type="text" class="form-control" [(ngModel)]="description">
+  </div>
+  <div>
+    <label>Prix</label>
+    <input type="text" class="form-control" [(ngModel)]="prix">
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Categorie</mat-label>
+      <mat-select [(ngModel)]="domaine">
+        <div *ngFor="let dom of domaines">
+          <mat-option [value]="dom.nom">
+            {{dom.nom}}
+          </mat-option>
+        </div>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <label>Stock</label>
+    <input type="text" class="form-control" [(ngModel)]="stock">
+  </div>
+ <span class="text-danger" >{{Error}}</span>
+  <button class="btn d-block bg-info mt-3 " (click)="submit()">Sauvegarder vos modifications</button>
+</div>
+

@@ -20,3 +20,10 @@ table {
 .custom-mat-cell{
   width: 120px;
 }
+.font{
+  font-size: 25px;
+  font-weight: 400;
+}
+.delete:active{
+  transform: translateY(-3px);
+}

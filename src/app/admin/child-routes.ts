@@ -3,6 +3,7 @@ import {FournisseursComponent} from "./fournisseurs/fournisseurs.component";
 import {CommandesComponent} from "./commandes/commandes.component";
 import {PayementsComponent} from "./payements/payements.component";
 import {ClientsComponent} from "./clients/clients.component";
+import {PromotionsComponent} from "./promotions/promotions.component";
 
 export const childRoutes = [
   {
@@ -38,7 +39,7 @@ export const childRoutes = [
   },
   {
     path: 'promotions',
-    component: ProduitsComponent ,
+    component: PromotionsComponent ,
     data: { icon: 'perm_media', text: 'Promotions' }
   }
 

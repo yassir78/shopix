@@ -1,0 +1,21 @@
+<div class="">
+  <h1>Modifier votre Produit</h1>
+  <label>Ref</label>
+  <input class="form-control" [(ngModel)]="data.prod.ref">
+  <label>Libelle</label>
+  <input class="form-control" [(ngModel)]="data.prod.libelle">
+  <label>Marque</label>
+  <input class="form-control" [(ngModel)]="data.prod.marque">
+  <label>Description</label>
+  <input class="form-control" [(ngModel)]="data.prod.description">
+  <label>Prix</label>
+  <input class="form-control" [(ngModel)]="data.prod.prix">
+  <label>stock</label>
+  <input class="form-control" [(ngModel)]="data.prod.stock">
+  <label>active</label>
+  <input class="form-control" [(ngModel)]="data.prod.active">
+  <span class="text-danger font">{{messageError}}</span>
+  <button class="btn d-block bg-info mt-3 " (click)="onNoClick()">Sauvegarder vos modifications</button>
+
+
+</div>

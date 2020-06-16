@@ -33,13 +33,14 @@ export class CommandeService {
   }
 
 
-delete(id){
+
+deleteCommande(id){
   return this.http.delete("http://localhost:7600/shopix-api/commandes/id/"+id);
 
 }
 
 
-update(commande){
+updateCommande(commande){
  const httpOptions = {
        headers: new HttpHeaders({
          'Content-Type':  'application/json'
@@ -49,9 +50,16 @@ update(commande){
 
 }
 
+
   findAll(){
     return this.http.get("http://localhost:7600/shopix-api/commandes/");
 
+  }
+  nbrCommandes(){
+    return this.http.get("http://localhost:7600/shopix-api/commandes/nbrCommandes");
+  }
+  findByEtat(etat:string){
+    return this.http.get(`http://localhost:7600/shopix-api/commandes/etat/${etat}`);
   }
 
 

@@ -1,33 +1,48 @@
-<p>You can do filter table data, in this case with observables and our <code>NgbHighlight</code> component used in Typeahead</p>
-
 <form>
-  <div class="form-group form-inline">
-    Full text search: <input class="form-control ml-2" type="text" [formControl]="filter"/>
+  <div class="form-group form-inline  d-flex justify-content-between">
+    <button class="btn btn-primary w-50" (click)="openDialogAdd()">Ajouter</button>
+    <div>
+      <span class="font"> Cherchez votre produit : </span><input class="form-control ml-2" type="text"
+                                                                 [formControl]="filter"/>
+    </div>
   </div>
 </form>
 
 <table class="table table-striped">
   <thead>
   <tr>
-    <th scope="col">Reference</th>
-    <th scope="col">Libelle</th>
-    <th scope="col">Marque</th>
-    <th scope="col">Prix</th>
-    <th scope="col">Stock</th>
-    <th scope="col">Action</th>
+    <th scope="col">ref</th>
+    <th scope="col">image</th>
+    <th scope="col">libelle</th>
+    <th scope="col">marque</th>
+    <th scope="col">prix</th>
+    <th scope="col">stock</th>
+    <th scope="col">editer</th>
+    <th scope="col">supprimer</th>
+
+
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let produit of products ">
-    <td>
-      <img [src]="produit.image"  class="mr-2" style="width: 100px">
-      <ngb-highlight [result]="produit.ref" [term]="filter.value"></ngb-highlight>
+  <tr *ngFor="let prod of produits$ | async;">
+    <td class="pt-5 font">
+      <ngb-highlight [result]="prod.ref.toString() " [term]="filter.value"></ngb-highlight>
     </td>
-    <td><ngb-highlight [result]="produit.libelle " [term]="filter.value"></ngb-highlight></td>
-    <td><ngb-highlight [result]="produit.marque " [term]="filter.value"></ngb-highlight></td>
-    <td><ngb-highlight [result]="produit.prix " [term]="filter.value"></ngb-highlight></td>
-    <td><ngb-highlight [result]="produit.stock" [term]="filter.value"></ngb-highlight></td>
-    <td><ngb-highlight ><button class="btn">Editer</button><button class="btn">Supprimer</button></ngb-highlight></td>
+    <th scope="row"><img [src]="prod.image" height="100px" width="100px"></th>
+    <td class="pt-5 font">
+      <ngb-highlight [result]="prod.libelle" [term]="filter.value"></ngb-highlight>
+    </td>
+    <td class="pt-5 font">
+      <ngb-highlight [result]="prod.marque" [term]="filter.value"></ngb-highlight>
+    </td>
+    <td class="pt-5 font">
+      <ngb-highlight [result]="prod.prix.toString()"></ngb-highlight>
+    </td>
+    <td class="pt-5 font">
+      <ngb-highlight [result]="prod.stock.toString()"></ngb-highlight>
+    </td>
+    <td class="pt-4 delete" (click)="openDialog(prod)"><img src="assets/images/edit1.svg.png" height="50px"></td>
+    <td class="pt-4 delete" (click)="delete(prod)"><img src="assets/images/delete2.png" width="50px"></td>
   </tr>
   </tbody>
 </table>

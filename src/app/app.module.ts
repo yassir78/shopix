@@ -22,6 +22,10 @@ import { CookieService } from 'ngx-cookie-service';
 import {SharedModule} from './shared/shared.module';
 import {CoreModule} from './core/core.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UpdateClientDialogComponent } from './dialogs/update-client-dialog/update-client-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { AddClientDialogComponent } from './dialogs/add-client-dialog/add-client-dialog.component';
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -33,25 +37,29 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     ConnexionComponent,
     InscriptionComponent,
-    CommandeComponent
+    CommandeComponent,
+    UpdateClientDialogComponent,
+    AddClientDialogComponent
 
   ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MaterialModule,
-        FormsModule,
-        NgxSpinnerModule,
-        AppRoutingModule,
-        HttpClientModule,
-        MatFormFieldModule,
-         CoreModule,
-        SharedModule,
-        NgbModule
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FormsModule,
+    NgxSpinnerModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    CoreModule,
+    SharedModule,
+    NgbModule,
+    MatDialogModule,
+    MatSelectModule
 
 
-    ],
+  ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]
 })
