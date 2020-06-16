@@ -66,7 +66,7 @@ export class CommandesComponent implements OnInit {
 
   delete(commande:Commande){
    this.selectedCommande = commande;
-    this.commandeService.delete(this.selectedCommande.id).subscribe(data => {
+    this.commandeService.deleteCommande(this.selectedCommande.id).subscribe(data => {
       let itemIndex = this.commandes.findIndex(item => item.id == this.selectedCommande.id);
       if(itemIndex !== -1){
         this.commandes.splice(itemIndex, 1);

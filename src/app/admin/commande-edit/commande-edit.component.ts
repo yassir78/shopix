@@ -24,7 +24,7 @@ export class CommandeEditComponent implements OnInit {
     this.data.commande.etatCommande = form.value.stat;
    // console.log(form.value);
     //console.log(this.data.commande);
-    this.commandeService.update(this.data.commande).subscribe(data=>{
+    this.commandeService.updateCommande(this.data.commande).subscribe(data=>{
       console.log(data);
     }, err=>{
       console.log(err);
