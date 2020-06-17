@@ -50,6 +50,10 @@ const routes:Routes = [
   {
     path:'commandeInfo',
     component:CommandeInfoComponent
+  },
+  {
+    path:'boutique/:nom',
+    component: ShopComponent
   }
 
 ]

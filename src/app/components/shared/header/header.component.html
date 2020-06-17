@@ -18,8 +18,12 @@
               <button mat-menu-item>arabe</button>
             </mat-menu>
           </div>
-          <div class="col-1 mt-4"><a href="" class="ft">Mon compte <mat-icon class="header__icon">account_circle
-              </mat-icon> </a></div>
+          <div class="col-1 mt-4"><a  class="ft text-white"  mat-button [matMenuTriggerFor]="us">Mon compte <mat-icon class="header__icon">account_circle
+              </mat-icon> </a>
+            <mat-menu #us="matMenu" fxLayoutAlign="end center">
+              <button mat-menu-item>Boutique</button>
+              <button mat-menu-item (click)="logout()">Deconnexion</button>
+            </mat-menu></div>
         </div>
       </div>
     </mat-toolbar-row>
@@ -30,15 +34,16 @@
 
 
 <div class="nav bg-pri">
-  <mat-sidenav  [opened]="false" mode="over" #start class="header-sidenav">
-    <div *ngIf="domaines">
+  <mat-sidenav  [opened]="false" mode="over" #start class="header-sidenav" (mouseleave)="start.close()">
+    <div *ngIf="categories">
     <div class="triangle"></div>
-    <div class="sidebar-items py-3" fxLayout="column" (mouseleave)="start.close()" *ngFor="let domaine of domaines._embedded.domaines">
-      <div class="p-3 d-flex">
+      <div *ngFor="let cat of categories" >
+    <div class="sidebar-items" fxLayout="column"  >
+      <div class="p-3 d-flex btn btn-outline-dark" [routerLink]="['/accueil/boutique',cat.nom]" >
         <mat-icon class="pr-5">android</mat-icon>
-      <a mat-list-item class="d-block font-weight-bold ">{{domaine.nom}}</a>
+      <a mat-list-item class="d-block font-weight-bold" >{{cat.nom}}</a>
       </div>
-
+    </div>
     </div>
     </div>
 
@@ -57,14 +62,23 @@
       </div>
       <div class="col-6 my-auto nav__search pt-3">
         <div class="search-form">
-          <form class="form-1 d-flex">
-            <input type="text" class="form-1-input">
+          <div class="form-1 d-flex" >
+            <input type="text" class="form-1-input" (keyup)="chercher()" [(ngModel)]="input">
             <button type="submit" class="form-button ml-0">
               <mat-icon>search</mat-icon>
             </button>
-          </form>
+          </div>
         </div>
-
+        <div *ngIf="array" class="position-absolute width" >
+          <div *ngFor="let prod of array">
+            <mat-toolbar class="d-flex justify-content-between"  >
+              <img [src]="prod.image" name="search" height="50px" width="50px" class="border-right">
+              <div class=" text-center">{{prod.libelle}}</div>
+              <div class=" text-center">{{prod.prix}} Dhs</div>
+              <button class="btn btn-primary" (click)="add(prod)">ajouter</button>
+            </mat-toolbar>
+          </div>
+        </div>
       </div>
       <div class="col-3 my-auto pt-3 ml-5 d-flex">
         <div class="contact d-flex">
@@ -75,26 +89,18 @@
             <p style="font-size: 20px;" class="ml-3">N° 0524042233 </p>
           </div>
         </div>
-
           <div class="panier  pl-4">
             <a routerLink="/accueil/panier" >
           <mat-icon class="text-white  ml-3" style="font-size: 50px;">shopping_cart</mat-icon>
           <span class="notif_panier text-white pl-0" >{{panierItems.length}}</span>
             </a>
         </div>
-
-
-
-
-
       </div>
-
     </div>
   </div>
 </div>
 <div class="menu">
   <mat-toolbar-row>
-
       <div class="container">
         <div class="row menu_items">
           <div class="col-3"> <a  class="menu_link" routerLink="/accueil">Accueil</a></div>
@@ -103,6 +109,5 @@
           <div class="col-2"> <a class="menu_link" routerLink="/accueil/contact">Contactez-Nous</a></div>
         </div>
       </div>
-
   </mat-toolbar-row>
 </div>

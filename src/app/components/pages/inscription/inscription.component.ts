@@ -22,7 +22,7 @@ export class InscriptionComponent implements OnInit {
   public enable1:boolean=false;
   public message:string="";
   ngOnInit(): void {
-    this.user.status = "Acheteur";
+
   }
   onSubmit(value:any){
      console.log(this.user);
@@ -35,6 +35,7 @@ export class InscriptionComponent implements OnInit {
        let user1:User=new User();
        user1.email = this.user.email;
        user1.password = this.user.password;
+       this.user.userRole = 'USER';
       this.userService.findByPasswordAndEmail(user1).subscribe(
         data=>{
             this.userService.saveUser(this.user).subscribe(data =>{

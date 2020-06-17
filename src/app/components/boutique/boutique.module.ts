@@ -8,8 +8,6 @@ import {AProposComponent} from "../a-propos/a-propos.component";
 import { MainCarouselComponent } from './main-carousel/main-carousel.component';
 import { ProduitCarouselComponent } from './produit-carousel/produit-carousel.component';
 import {SwiperModule} from "ngx-swiper-wrapper";
-import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
-import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";
 import {PanierComponent} from "../pages/panier/panier.component";
@@ -18,6 +16,8 @@ import {MatButtonModule} from "@angular/material/button";
 import {CommandeInfoComponent} from "../pages/commande-info/commande-info.component";
 import { ProduitsComponent } from './produits/produits.component';
 import {FormsModule} from "@angular/forms";
+import {SpinnerComponent} from "../spinner/spinner.component";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 
@@ -31,18 +31,20 @@ import {FormsModule} from "@angular/forms";
     PanierComponent,
     CommandeInfoComponent,
     ProduitsComponent,
+    SpinnerComponent,
 
   ],
-    imports: [
-        CommonModule,
-        BoutiqueRoutingModule,
-        SwiperModule,
-        MatIconModule,
-        MatCardModule,
-        MatChipsModule,
-        MatButtonModule,
-        FormsModule
-    ]
+  imports: [
+    CommonModule,
+    BoutiqueRoutingModule,
+    SwiperModule,
+    MatIconModule,
+    MatCardModule,
+    MatChipsModule,
+    MatButtonModule,
+    FormsModule,
+    MatProgressSpinnerModule
+  ]
 })
 export class BoutiqueModule {
 }

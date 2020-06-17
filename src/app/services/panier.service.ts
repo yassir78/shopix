@@ -14,7 +14,7 @@ export class PanierService {
   constructor(private http:HttpClient) {
     this.panierItems.subscribe(products => products = products);
   }
-  addToPanier(product:Produit,qte:number):any{
+  addToPanier(product:Produit,qte:number = 1):any{
     let hasItem = products.find((items, index)=>{
       if(items.product.ref == product.ref) {
         let newQte = products[index].qte+ qte;

@@ -1,5 +1,4 @@
 import {Adresse} from "./adresse";
-import {UserRole} from "./user-role";
 
 export class User {
   public id:number;
@@ -13,6 +12,6 @@ export class User {
   public tel:string;
   public active:boolean;
   public adresse:Adresse[];
-  public userRoles:UserRole[];
+  public userRole:string;
 
 }

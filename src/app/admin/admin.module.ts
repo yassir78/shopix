@@ -25,6 +25,9 @@ import {NgbPaginationModule, NgbTypeaheadModule} from "@ng-bootstrap/ng-bootstra
 import {MaterialModule} from "../modules/material/material.module";
 import { CommandeEditComponent } from './commande-edit/commande-edit.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import {LoginComponent} from "./login/login.component";
+
+
 
 
 @NgModule({
@@ -47,7 +50,7 @@ import {MatDialogModule} from "@angular/material/dialog";
     MaterialModule,
     MatDialogModule
   ],
-  declarations: [LayoutComponent, TopNavComponent, SideNavComponent, ProduitsComponent, CommandesComponent, FournisseursComponent, ClientsComponent, PayementsComponent, PromotionsComponent, CommandeEditComponent],
+  declarations: [LayoutComponent, TopNavComponent, SideNavComponent, ProduitsComponent, CommandesComponent, FournisseursComponent, ClientsComponent, PayementsComponent, PromotionsComponent, CommandeEditComponent,   LoginComponent],
   providers: [DecimalPipe],
   entryComponents: [
     CommandeEditComponent

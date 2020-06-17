@@ -26,8 +26,7 @@ import { UpdateClientDialogComponent } from './dialogs/update-client-dialog/upda
 import {MatDialogModule} from "@angular/material/dialog";
 import { AddClientDialogComponent } from './dialogs/add-client-dialog/add-client-dialog.component';
 import {MatSelectModule} from "@angular/material/select";
-
-
+import {MatProgressSpinner, MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +41,7 @@ import {MatSelectModule} from "@angular/material/select";
     AddClientDialogComponent
 
   ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -56,11 +55,15 @@ import {MatSelectModule} from "@angular/material/select";
     SharedModule,
     NgbModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressSpinnerModule
 
 
   ],
-  providers: [ CookieService ],
+  providers: [CookieService],
+  exports: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

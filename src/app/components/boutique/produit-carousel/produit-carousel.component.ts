@@ -16,10 +16,13 @@ export class ProduitCarouselComponent implements OnInit,AfterViewInit {
     clickable: true
   };
   public produits;
+  spinner: boolean=true;
   constructor(private produitService:ProduitService,private panierService:PanierService) { }
   ngOnInit(): void {
+    this.spinner = true;
       this.produitService.getNomProduits().subscribe(
         data=>{
+          this.spinner = false;
           this.produits = data;
           console.log(data);
         },error => {

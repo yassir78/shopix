@@ -1,0 +1,30 @@
+<div class="login-page">
+  <div class=" ">
+    <form #myForm="ngForm" (ngSubmit)="onLogin()">
+      <div class="text-center">
+        <h2>Connexion</h2>
+      </div>
+      <div>
+        <div>
+          <div class="mb-3">
+            <label for="email">Email</label>
+            <input type="text" id="email" class="form-control " name="email" placeholder="Email"
+                   [(ngModel)]="user.email">
+          </div>
+          <div class="mb-3">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control " name="password" placeholder="Password"
+                   [(ngModel)]="user.password">
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <span class="text-danger">{{messageErreur}}</span>
+          <button type="submit" class="btn btn-primary d-block w-100">Login</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

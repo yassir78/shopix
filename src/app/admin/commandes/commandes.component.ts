@@ -5,9 +5,6 @@ import {MatDialogConfig, MatDialog} from "@angular/material/dialog";
 import {CommandeEditComponent} from "../commande-edit/commande-edit.component";
 
 
-
-declare var $: any;
-
 @Component({
   selector: 'app-commandes',
   templateUrl: './commandes.component.html',
@@ -16,10 +13,6 @@ declare var $: any;
 export class CommandesComponent implements OnInit {
  public commandes: Array<Commande>;
  public selectedCommande: Commande = new Commande();
-  errorMessage: string;
-  infoMessage: string;
-
-
   constructor( private dialog: MatDialog,private commandeService:CommandeService) {
 
 
@@ -42,7 +35,7 @@ export class CommandesComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
-    dialogConfig.width = "50px";
+    dialogConfig.width = "40vw";
     dialogConfig.data = { commande };
     this.dialog
       .open(CommandeEditComponent, dialogConfig)
@@ -53,7 +46,6 @@ export class CommandesComponent implements OnInit {
 
         this.commandeService.findAll().subscribe(data=>{
           this.commandes = <Array<Commande>>data ;
-          console.log("********commandes data....");
           console.log(data);
         }, error => {
           console.log(error)
@@ -71,11 +63,8 @@ export class CommandesComponent implements OnInit {
       if(itemIndex !== -1){
         this.commandes.splice(itemIndex, 1);
       }
-     // this.dataSource = new MatTableDataSource(this.productList);
-      this.infoMessage = "Mission is completed";
-      $('#deleteModal').modal('hide');
     },err => {
-      this.errorMessage = "Unexpected error occurred.";
+      console.log(err);
     });
   }
 

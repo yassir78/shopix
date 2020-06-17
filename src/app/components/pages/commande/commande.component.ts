@@ -37,21 +37,21 @@ export class CommandeComponent implements OnInit {
     let email,password;
     email = this.cookieService.get("email");
     password = this.cookieService.get("password");
-    this.user.email = email;
-    this.user.password = password;
-    this.userService.findByPasswordAndEmail(this.user).subscribe(
-      data=>{
-        this.userData = data;
-        console.log('sssssssssssssssssssssssssssssssssssssssssssss');
-        console.log(this.userData);
-        this.user = this.userData;
+    if(email && password){
+      this.user.email = email;
+      this.user.password = password;
+      this.userService.findByPasswordAndEmail(this.user).subscribe(
+        data=>{
+          this.userData = data;
+          console.log("hey hye hye hye");
+          console.log(this.userData);
+          this.user = this.userData;
 
-      },error =>{
-        console.log('error');
-      }
-    )
-
-
+        },error =>{
+          console.log('error');
+        }
+      )
+    }
    this.panierItems  = this.panierService.getPanierItems();
    this.panierItems.subscribe(data=>{
      this.products = data;

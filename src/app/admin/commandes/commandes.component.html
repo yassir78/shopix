@@ -15,7 +15,7 @@
     <tr *ngFor="let commande of commandes; index as i">
       <th scope="row">{{ commande.ref }}</th>
       <td>{{ commande.total }}</td>
-      <td class="text-warning">En cours... </td>
+      <td class="text-warning">{{commande.etatCommande}} </td>
       <td>{{ commande.user.nom}} {{ commande.user.prenom}}</td>
       <td>{{ commande.date}}</td>
       <td><button class="btn btn-info" (click)="editCommandeRequest(commande)">Editer</button>&nbsp;<button class="btn btn-danger" (click)="delete(commande)">Supprimer</button></td>

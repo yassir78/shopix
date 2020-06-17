@@ -50,18 +50,6 @@
       <span class="text-danger" *ngIf="(cpassword.touched || userForm.submitted ) && cpassword.errors?.required && enable">champ obligatoire</span>
       <span class="text-danger" *ngIf="!enable && (cpassword.touched || userForm.submitted )">{{messageErreur}}</span>
     </div>
-    <div class="form-group">
-      <div class="form-check form-check-inline">
-        <input type="radio"  #status="ngModel"  name="status" id="acheteur"  class="form-check-input" value="Acheteur"  [(ngModel)]="user.status">
-        <label class="form-check-label label" for="acheteur">Acheteur</label>
-      </div>
-      <div class="form-check form-check-inline my-1">
-        <input type="radio" #status="ngModel" name="status" id="vendeur" class="form-check-input" value="Vendeur"   [(ngModel)]="user.status">
-        <label class="form-check-label label" for="vendeur">Vendeur</label>
-
-      </div>
-
-    </div>
     <div class="row">
       <button type="submit" class="btn text-white d-block"  style="background-color: #0E4157;">Inscription</button>
       <a class="text-primary mt-1 ml-4" routerLink="/accueil/connexion">Connectez-vous...</a>
