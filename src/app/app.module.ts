@@ -43,6 +43,7 @@ import {MatProgressSpinner, MatProgressSpinnerModule} from "@angular/material/pr
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
+
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
