@@ -44,6 +44,7 @@ import {MatSelectModule} from "@angular/material/select";
   ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
+
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,

@@ -18,7 +18,8 @@ import {MatButtonModule} from "@angular/material/button";
 import {CommandeInfoComponent} from "../pages/commande-info/commande-info.component";
 import { ProduitsComponent } from './produits/produits.component';
 import {FormsModule} from "@angular/forms";
-
+import {MatExpansionModule} from '@angular/material/expansion';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -41,7 +42,10 @@ import {FormsModule} from "@angular/forms";
         MatCardModule,
         MatChipsModule,
         MatButtonModule,
-        FormsModule
+        FormsModule,
+        MatExpansionModule,
+        FlexLayoutModule
+
     ]
 })
 export class BoutiqueModule {
