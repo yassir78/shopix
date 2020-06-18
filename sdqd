@@ -1,0 +1,171 @@
+[33mcommit 773315499b6e272b6db5b83e998745946d5e8204[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: 4b339f5 fc73faf
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Wed Jun 17 22:50:01 2020 +0100
+
+    conflicts
+
+[33mcommit 4b339f51c855428bc59f156c0f1a9dcbb7351413[m
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Wed Jun 17 22:44:53 2020 +0100
+
+    final project
+
+[33mcommit fc73faf0cbb2217191136a3227806b0a97df1196[m
+Author: belkoweb <belkoweb9718@gmail.com>
+Date:   Wed Jun 17 22:24:01 2020 +0100
+
+    Page Contact & A propos
+
+[33mcommit c8d4b5d2fab96b1350feecc993270f066298c0d8[m
+Author: belkoweb <belkoweb9718@gmail.com>
+Date:   Tue Jun 16 12:55:10 2020 +0100
+
+    gestion conflit
+
+[33mcommit f7ad9b5281b49cc05477653ad67460c65b93d0ab[m
+Merge: 7d81dd5 6f3d769
+Author: belkoweb <belkoweb9718@gmail.com>
+Date:   Tue Jun 16 12:52:57 2020 +0100
+
+    gestion c
+
+[33mcommit 7d81dd54bf147f7155a515a5a8879ca967776abc[m
+Author: belkoweb <belkoweb9718@gmail.com>
+Date:   Tue Jun 16 12:46:49 2020 +0100
+
+    gestion commande 2
+
+[33mcommit 6f3d76972dceb8a436174a740af66d9b4934fefe[m
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Mon Jun 15 23:49:30 2020 +0100
+
+    commit 6
+
+[33mcommit 112b8ecfb3e18ef4df6da3b4db52a77656bf3478[m
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Mon Jun 15 15:22:38 2020 +0100
+
+    produit dashboard
+
+[33mcommit 0f8cd943bb8bb8fcbe4ad8ecb6b09ac590a375d5[m
+Merge: a954ddf 690de35
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Sun Jun 14 14:35:59 2020 +0100
+
+    Merge branch 'master' of https://github.com/yassir78/shopix
+
+[33mcommit a954ddf768306a5546155cfab0513ba0ff424c85[m
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Sun Jun 14 14:35:52 2020 +0100
+
+    produit dashboard
+
+[33mcommit 690de3538ae037191bdbde3a6f16565e3874339a[m
+Author: belkoweb <belkoweb9718@gmail.com>
+Date:   Sun Jun 14 14:10:11 2020 +0100
+
+    gestion commande admmin
+
+[33mcommit 8da590fd0c88fb308451520bb5003e3e71bc4208[m
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Thu Jun 11 21:48:16 2020 +0100
+
+    another commit
+
+[33mcommit d57eb2575a24b1d7ca5ddc174292b45f910f1f58[m
+Merge: d18166c 264085f
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Thu Jun 11 17:03:49 2020 +0100
+
+    sideNav confilcts
+
+[33mcommit d18166c58fa3ade8ebdfd813d8ed51c70c0e242e[m
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Thu Jun 11 16:59:41 2020 +0100
+
+    produit
+
+[33mcommit 264085f6ae68e1f314a162a1cbb72e8d373250c4[m
+Author: belkoweb <belkoweb9718@gmail.com>
+Date:   Thu Jun 11 16:43:37 2020 +0100
+
+    init admin interface
+
+[33mcommit 575024750158795f49d97759f76d17e0cf5a271a[m
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Mon Jun 8 22:28:32 2020 +0100
+
+    bugs
+
+[33mcommit 8a1ac6eabf644f945cd3f862e14540a9450a7283[m
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Mon Jun 8 20:30:48 2020 +0100
+
+    gestion des inputs
+
+[33mcommit cab7ebd4c7cf5599aa1737c86a4af7d091819f1b[m
+Author: belkoweb <belkoweb9718@gmail.com>
+Date:   Mon Jun 8 20:28:54 2020 +0100
+
+    navigate and reload accueil
+
+[33mcommit bd9ca8df7e8e11ee8c19ae5af6ce1bcd00569ae3[m
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Mon Jun 8 16:07:55 2020 +0100
+
+    input
+
+[33mcommit f5ce07fa4fbefacb4b73beabe60adef73a1f8403[m
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Thu Jun 4 22:38:25 2020 +0100
+
+    finalisation commande
+
+[33mcommit 4c0b9960942ff3e338317e32e1eefbc76ce0089e[m
+Author: belkoweb <belkoweb9718@gmail.com>
+Date:   Thu Jun 4 21:48:18 2020 +0100
+
+    commande gestion
+
+[33mcommit 664c9b9c6f7f69ecf816fa59c84a288c2b8d802c[m
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Thu Jun 4 18:14:20 2020 +0100
+
+    commande et commandeItem
+
+[33mcommit 00f6c0cb9176b1e5623fabcae34cd71a5c8be8bc[m
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Wed Jun 3 17:48:44 2020 +0100
+
+    commande
+
+[33mcommit ff70532145509679cc2f00c08ef2f792ea317d46[m
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Mon Jun 1 01:14:44 2020 +0100
+
+    gestion panier
+
+[33mcommit 690cc03e980c3232612271d7b8c6bd5910cb356e[m
+Author: belkoweb <belkoweb9718@gmail.com>
+Date:   Sun May 31 23:10:49 2020 +0100
+
+    Les plus demandes
+
+[33mcommit 8b60c4564107cb5b1b8aff56316206786dffbc9e[m
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Thu May 28 01:59:27 2020 +0000
+
+    third commit
+
+[33mcommit 49b70fd58ceedcf2dec8200648b8cb4c1bfb583b[m
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Wed May 27 01:00:05 2020 +0000
+
+    second commit
+
+[33mcommit c33141b5aeafc6c784c46208436efbe0b80da3dc[m
+Author: yassir acaf <yassir.acaf@gmail.com>
+Date:   Tue May 26 20:15:45 2020 +0000
+
+    first commit

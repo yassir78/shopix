@@ -29,25 +29,20 @@
                 <h4 class="card-title">
                   <a href="#">{{prod.image}}</a>
                 </h4>
-                <div class="stars">
-                  <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
-                  <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
-                  <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
-                  <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
-                  <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
-                </div>
-                <h4>{{prod.prix}}&nbsp;Dhs</h4>
+                <p class="card-text">{{prod.libelle}}</p>
                 <p class="card-text">{{prod.description}}</p>
+
+
               </div>
-              <div class="card-footer">
-                <button (click)="addToPanier(prod)" class="btn rounded-circle p-1 hover-me"
-                        style="background-color: #9c9c9c">
-                  <mat-icon style="color: #FFF" class="rounded " role="img"
-                            class="mat-icon notranslate mat-icon-lg material-icons mat-icon-no-color" aria-hidden="true">
-                    shopping_cart
-                  </mat-icon>
-                </button>
+              <div class="d-flex justify-content-between mx-3">
+                <h4>{{prod.prix}}&nbsp;Dhs</h4>
+                <div class="hexa">
+                <a (click)="addToPanier(prod)">
+                  <mat-icon class="icon">shopping_cart</mat-icon>
+                </a>
+                </div>
               </div>
+
             </div>
 
 
