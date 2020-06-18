@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'app-a-propos',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AProposComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(DOCUMENT) private _document) { }
 
   ngOnInit(): void {
+    this._document.body.style.background="#f5f5f5";
   }
 
 }

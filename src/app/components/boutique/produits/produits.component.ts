@@ -9,7 +9,9 @@ import {PanierService} from "../../../services/panier.service";
   styleUrls: ['./produits.component.scss']
 })
 export class ProduitsComponent implements OnInit {
- public produits;
+ public produitsVetements;
+  public produitsSuperMarche;
+  public produits;
   constructor(private produitService:ProduitService,private panierService:PanierService) { }
 
   ngOnInit(): void {
@@ -23,6 +25,13 @@ export class ProduitsComponent implements OnInit {
         console.log(error);
       }
     )
+  this.produitService.findByCategorie("Vetements & Chaussures").subscribe(data=>{
+    this.produitsVetements = data;
+  });
+    this.produitService.findByCategorie("Supermarche").subscribe(data=>{
+      this.produitsSuperMarche = data;
+    });
+
   };
   addToPanier(product: Produit,qte:number=1) {
     this.panierService.addToPanier(product,qte);

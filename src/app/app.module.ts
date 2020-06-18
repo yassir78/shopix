@@ -19,8 +19,6 @@ import { InscriptionComponent } from './components/pages/inscription/inscription
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { CommandeComponent } from './components/pages/commande/commande.component';
 import { CookieService } from 'ngx-cookie-service';
-import {SharedModule} from './shared/shared.module';
-import {CoreModule} from './core/core.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UpdateClientDialogComponent } from './dialogs/update-client-dialog/update-client-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
@@ -52,8 +50,6 @@ import {MatProgressSpinner, MatProgressSpinnerModule} from "@angular/material/pr
     AppRoutingModule,
     HttpClientModule,
     MatFormFieldModule,
-    CoreModule,
-    SharedModule,
     NgbModule,
     MatDialogModule,
     MatSelectModule,
